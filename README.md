@@ -1,4 +1,4 @@
-👋 Hi, I’m an AI / Data Engineer
+👋 Hi, I’m an  Data & AI Engineer
 
 I design and build end-to-end data & AI systems — from large-scale data ingestion to analytics, machine learning, and AI-powered applications.
 I specialize in Data Engineering, Data Streaming, Data Science, and MLOps, with a strong focus on Azure, scalable architectures, and production-ready solutions.
