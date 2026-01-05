@@ -1,0 +1,842 @@
+<!DOCTYPE html><html dir="ltr" lang="en" class="scroll-smooth" data-astro-cid-sckkx6r4> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width"><link rel="icon" type="image/svg+xml" href="/favicon.svg"><link rel="canonical" href="https://fkdia23.github.io/posts/rag-precision-tracabilite/"><meta name="generator" content="Astro v5.16.6"><!-- General Meta Tags --><title>Construire un RAG fiable, traçable et auditable | Home</title><meta name="title" content="Construire un RAG fiable, traçable et auditable | Home"><meta name="description" content="Concevoir un système RAG capable de fournir des réponses précises, vérifiables et sourcées à partir de documents complexes, avec traçabilité complète jusqu’à la page source.
+"><meta name="author" content="Franklin KANA NGUEDIA"><link rel="sitemap" href="/sitemap-index.xml"><!-- Open Graph / Facebook --><meta property="og:title" content="Construire un RAG fiable, traçable et auditable | Home"><meta property="og:description" content="Concevoir un système RAG capable de fournir des réponses précises, vérifiables et sourcées à partir de documents complexes, avec traçabilité complète jusqu’à la page source.
+"><meta property="og:url" content="https://fkdia23.github.io/posts/rag-precision-tracabilite/"><meta property="og:image" content="https://fkdia23.github.io/posts/rag-precision-tracabilite/index.png"><!-- Article Published/Modified time --><meta property="article:published_time" content="2025-10-29T16:52:45.934Z"><meta property="article:modified_time" content="2025-10-29T16:52:45.934Z"><!-- Twitter --><meta property="twitter:card" content="summary_large_image"><meta property="twitter:url" content="https://fkdia23.github.io/posts/rag-precision-tracabilite/"><meta property="twitter:title" content="Construire un RAG fiable, traçable et auditable | Home"><meta property="twitter:description" content="Concevoir un système RAG capable de fournir des réponses précises, vérifiables et sourcées à partir de documents complexes, avec traçabilité complète jusqu’à la page source.
+"><meta property="twitter:image" content="https://fkdia23.github.io/posts/rag-precision-tracabilite/index.png"><!-- Google JSON-LD Structured data --><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","headline":"Construire un RAG fiable, traçable et auditable | Home","image":"https://fkdia23.github.io/posts/rag-precision-tracabilite/index.png","datePublished":"2025-10-29T16:52:45.934Z","dateModified":"2025-10-29T16:52:45.934Z","author":[{"@type":"Person","name":"Franklin KANA NGUEDIA","url":"https://satnaing.dev/"}]}</script><!-- Enable RSS feed auto-discovery  --><!-- https://docs.astro.build/en/recipes/rss/#enabling-rss-feed-auto-discovery --><link rel="alternate" type="application/rss+xml" title="Home" href="https://fkdia23.github.io/rss.xml"><meta name="theme-color" content=""><meta name="astro-view-transitions-enabled" content="true"><meta name="astro-view-transitions-fallback" content="animate"><script type="module" src="/_astro/ClientRouter.astro_astro_type_script_index_0_lang.QW52Ox2j.js"></script><script src="/toggle-theme.js"></script><link rel="stylesheet" href="/_astro/about.DV_Ouq4Z.css">
+<style>@keyframes astroFadeInOut{0%{opacity:1}to{opacity:0}}@keyframes astroFadeIn{0%{opacity:0;mix-blend-mode:plus-lighter}to{opacity:1;mix-blend-mode:plus-lighter}}@keyframes astroFadeOut{0%{opacity:1;mix-blend-mode:plus-lighter}to{opacity:0;mix-blend-mode:plus-lighter}}@keyframes astroSlideFromRight{0%{transform:translate(100%)}}@keyframes astroSlideFromLeft{0%{transform:translate(-100%)}}@keyframes astroSlideToRight{to{transform:translate(100%)}}@keyframes astroSlideToLeft{to{transform:translate(-100%)}}@media(prefers-reduced-motion){::view-transition-group(*),::view-transition-old(*),::view-transition-new(*){animation:none!important}[data-astro-transition-scope]{animation:none!important}}
+:where([data-astro-image]){object-fit:var(--fit);object-position:var(--pos);height:auto}:where([data-astro-image=full-width]){width:100%}:where([data-astro-image=constrained]){max-width:100%}
+</style><style>[data-astro-transition-scope="astro-fam6wyqg-1"] { view-transition-name: construire-un-rag-fiable-tracable-et-auditable; }@layer astro { ::view-transition-old(construire-un-rag-fiable-tracable-et-auditable) { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeOut; }::view-transition-new(construire-un-rag-fiable-tracable-et-auditable) { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeIn; }[data-astro-transition=back]::view-transition-old(construire-un-rag-fiable-tracable-et-auditable) { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeOut; }[data-astro-transition=back]::view-transition-new(construire-un-rag-fiable-tracable-et-auditable) { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeIn; } }[data-astro-transition-fallback="old"] [data-astro-transition-scope="astro-fam6wyqg-1"],
+			[data-astro-transition-fallback="old"][data-astro-transition-scope="astro-fam6wyqg-1"] { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeOut; }[data-astro-transition-fallback="new"] [data-astro-transition-scope="astro-fam6wyqg-1"],
+			[data-astro-transition-fallback="new"][data-astro-transition-scope="astro-fam6wyqg-1"] { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeIn; }[data-astro-transition=back][data-astro-transition-fallback="old"] [data-astro-transition-scope="astro-fam6wyqg-1"],
+			[data-astro-transition=back][data-astro-transition-fallback="old"][data-astro-transition-scope="astro-fam6wyqg-1"] { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeOut; }[data-astro-transition=back][data-astro-transition-fallback="new"] [data-astro-transition-scope="astro-fam6wyqg-1"],
+			[data-astro-transition=back][data-astro-transition-fallback="new"][data-astro-transition-scope="astro-fam6wyqg-1"] { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeIn; }</style><style>[data-astro-transition-scope="astro-36ssibgs-2"] { view-transition-name: rag; }@layer astro { ::view-transition-old(rag) { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeOut; }::view-transition-new(rag) { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeIn; }[data-astro-transition=back]::view-transition-old(rag) { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeOut; }[data-astro-transition=back]::view-transition-new(rag) { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeIn; } }[data-astro-transition-fallback="old"] [data-astro-transition-scope="astro-36ssibgs-2"],
+			[data-astro-transition-fallback="old"][data-astro-transition-scope="astro-36ssibgs-2"] { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeOut; }[data-astro-transition-fallback="new"] [data-astro-transition-scope="astro-36ssibgs-2"],
+			[data-astro-transition-fallback="new"][data-astro-transition-scope="astro-36ssibgs-2"] { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeIn; }[data-astro-transition=back][data-astro-transition-fallback="old"] [data-astro-transition-scope="astro-36ssibgs-2"],
+			[data-astro-transition=back][data-astro-transition-fallback="old"][data-astro-transition-scope="astro-36ssibgs-2"] { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeOut; }[data-astro-transition=back][data-astro-transition-fallback="new"] [data-astro-transition-scope="astro-36ssibgs-2"],
+			[data-astro-transition=back][data-astro-transition-fallback="new"][data-astro-transition-scope="astro-36ssibgs-2"] { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeIn; }</style><style>[data-astro-transition-scope="astro-36ssibgs-3"] { view-transition-name: ursaff-caisse-nationale; }@layer astro { ::view-transition-old(ursaff-caisse-nationale) { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeOut; }::view-transition-new(ursaff-caisse-nationale) { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeIn; }[data-astro-transition=back]::view-transition-old(ursaff-caisse-nationale) { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeOut; }[data-astro-transition=back]::view-transition-new(ursaff-caisse-nationale) { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeIn; } }[data-astro-transition-fallback="old"] [data-astro-transition-scope="astro-36ssibgs-3"],
+			[data-astro-transition-fallback="old"][data-astro-transition-scope="astro-36ssibgs-3"] { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeOut; }[data-astro-transition-fallback="new"] [data-astro-transition-scope="astro-36ssibgs-3"],
+			[data-astro-transition-fallback="new"][data-astro-transition-scope="astro-36ssibgs-3"] { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeIn; }[data-astro-transition=back][data-astro-transition-fallback="old"] [data-astro-transition-scope="astro-36ssibgs-3"],
+			[data-astro-transition=back][data-astro-transition-fallback="old"][data-astro-transition-scope="astro-36ssibgs-3"] { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeOut; }[data-astro-transition=back][data-astro-transition-fallback="new"] [data-astro-transition-scope="astro-36ssibgs-3"],
+			[data-astro-transition=back][data-astro-transition-fallback="new"][data-astro-transition-scope="astro-36ssibgs-3"] { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeIn; }</style></head> <body data-astro-cid-sckkx6r4>  <header> <a id="skip-to-content" href="#main-content" class="absolute start-16 -top-full z-50 bg-background px-3 py-2 text-accent backdrop-blur-lg transition-all focus:top-4">
+Skip to content
+</a> <div id="nav-container" class="mx-auto flex max-w-app flex-col items-center justify-between sm:flex-row"> <div id="top-nav-wrap" class="relative flex w-full items-baseline justify-between bg-background p-4 sm:items-center sm:py-6"> <a href="/" class="absolute py-1 text-xl leading-8 font-semibold whitespace-nowrap sm:static sm:my-auto sm:text-2xl sm:leading-none"> Home </a> <nav id="nav-menu" class="flex w-full flex-col items-center sm:ms-2 sm:flex-row sm:justify-end sm:space-x-4 sm:py-0"> <!-- <button
+          id="menu-btn"
+          class="focus-outline self-end p-2 sm:hidden"
+          aria-label="Open Menu"
+          aria-expanded="false"
+          aria-controls="menu-items"
+        >
+          <IconX id="close-icon" class="hidden" />
+          <IconMenuDeep id="menu-icon" />
+        </button> --> <ul id="menu-items" class="mt-4 grid w-44 grid-cols-2 place-content-center gap-2 [&#38;>li>a]:block [&#38;>li>a]:px-4 [&#38;>li>a]:py-3 [&#38;>li>a]:text-center [&#38;>li>a]:font-medium [&#38;>li>a]:hover:text-accent sm:[&#38;>li>a]:px-2 sm:[&#38;>li>a]:py-1 hidden sm:mt-0 sm:flex sm:w-auto sm:gap-x-5 sm:gap-y-0"> <li class="col-span-2"> <a href="/posts" class="active-nav">
+Projets
+</a> </li> <li class="col-span-2"> <a href="/tags">
+Tags
+</a> </li> <li class="col-span-2"> <a href="/about">
+À propos
+</a> </li> <li class="col-span-2"> <a href="/archives" class="group inline-block hover:text-accent focus-outline flex justify-center p-3 sm:p-1" aria-label="archives" title="Archives"> <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="hidden sm:inline-block"><path stroke="none" d="M0 0h24v24H0z" fill="none" /><path d="M3 4m0 2a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v0a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2z" /><path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" /><path d="M10 12l4 0" /></svg> <span class="sm:sr-only">Archives</span> </a> </li> <li class="col-span-1 flex items-center justify-center"> <a href="/search" class="group inline-block hover:text-accent focus-outline flex p-3 sm:p-1" aria-label="search" title="Search"> <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-search"><path stroke="none" d="M0 0h24v24H0z" fill="none" /><path d="M10 10m-7 0a7 7 0 1 0 14 0a7 7 0 1 0 -14 0" /><path d="M21 21l-6 -6" /></svg> <span class="sr-only">Search</span> </a> </li> <li class="col-span-1 flex items-center justify-center"> <button id="theme-btn" class="focus-outline relative size-12 p-4 sm:size-8 hover:[&>svg]:stroke-accent" title="Toggles light & dark" aria-label="auto" aria-live="polite"> <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="absolute top-[50%] left-[50%] -translate-[50%] scale-100 rotate-0 transition-all dark:scale-0 dark:-rotate-90"><path stroke="none" d="M0 0h24v24H0z" fill="none" /><path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" /></svg> <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="absolute top-[50%] left-[50%] -translate-[50%] scale-0 rotate-90 transition-all dark:scale-100 dark:rotate-0"><path stroke="none" d="M0 0h24v24H0z" fill="none" /><path d="M14.828 14.828a4 4 0 1 0 -5.656 -5.656a4 4 0 0 0 5.656 5.656z" /><path d="M6.343 17.657l-1.414 1.414" /><path d="M6.343 6.343l-1.414 -1.414" /><path d="M17.657 6.343l1.414 -1.414" /><path d="M17.657 17.657l1.414 1.414" /><path d="M4 12h-2" /><path d="M12 4v-2" /><path d="M20 12h2" /><path d="M12 20v2" /></svg> </button> </li> </ul> </nav> </div> </div> <div class="mx-auto max-w-app px-4"> <hr class="border-border" aria-hidden="true"> </div> </header> <script type="module">function s(){const e=document.querySelector("#menu-btn"),t=document.querySelector("#menu-items"),n=document.querySelector("#menu-icon"),o=document.querySelector("#close-icon");!e||!t||!n||!o||e.addEventListener("click",()=>{const c=e.getAttribute("aria-expanded")==="true";e.setAttribute("aria-expanded",c?"false":"true"),e.setAttribute("aria-label",c?"Open Menu":"Close Menu"),t.classList.toggle("hidden"),n.classList.toggle("hidden"),o.classList.toggle("hidden")})}s();document.addEventListener("astro:after-swap",s);</script> <div class="mx-auto flex w-full max-w-app items-center justify-start px-2"><a id="back-button" href="/" class="group inline-block hover:text-accent focus-outline mt-8 mb-2 flex hover:text-foreground/75"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="inline-block size-6 rtl:rotate-180"><path stroke="none" d="M0 0h24v24H0z" fill="none" /><path d="M15 6l-6 6l6 6" /></svg><span>Go back</span></a></div><script type="module">function o(){const t=document.querySelector("#back-button"),e=sessionStorage.getItem("backUrl");e&&t&&(t.href=e)}document.addEventListener("astro:page-load",o);o();</script> <main id="main-content" class="mx-auto w-full max-w-app px-4 pb-12" data-pagefind-body> <h1 class="inline-block text-2xl font-bold text-accent sm:text-3xl" data-astro-transition-scope="astro-fam6wyqg-1"> Construire un RAG fiable, traçable et auditable </h1> <div class="my-2 flex items-center gap-2"> <div class="flex items-center gap-x-2 opacity-80"> <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="inline-block size-6 min-w-[1.375rem]"><path stroke="none" d="M0 0h24v24H0z" fill="none" /><path d="M4 7a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v12a2 2 0 0 1 -2 2h-12a2 2 0 0 1 -2 -2v-12z" /><path d="M16 3v4" /><path d="M8 3v4" /><path d="M4 11h16" /><path d="M7 14h.013" /><path d="M10.01 14h.005" /><path d="M13.01 14h.005" /><path d="M16.015 14h.005" /><path d="M13.015 17h.005" /><path d="M7.01 17h.005" /><path d="M10.01 17h.005" /></svg>  <time class="text-sm sm:text-base" datetime="2025-10-29T16:52:45.934Z">29 Oct, 2025</time> </div> <!-- <span
+        aria-hidden="true"
+        class:list={[
+          "max-sm:hidden",
+          { hidden: !SITE.editPost.enabled || hideEditPost },
+        ]}>|</span
+      > --> <!-- <EditPost {hideEditPost} {post} class="max-sm:hidden" /> --> </div> <article id="article" class="app-prose mx-auto mt-8 max-w-app prose-pre:bg-(--shiki-light-bg) dark:prose-pre:bg-(--shiki-dark-bg)"> <p>J’ai développé un système <strong>RAG (Retrieval-Augmented Generation)</strong> de haute précision, conçu pour transformer des archives complexes en une base de connaissances fiable et auditable. Je suis convaincu que cette solution répond à un défi majeur de l’URSSAF : permettre aux agents de naviguer dans la réglementation sociale avec une IA générative sécurisée.</p>
+<hr>
+<h3 id="-les-atouts-clés-du-prototype">🚀 Les atouts clés du prototype</h3>
+<ul>
+<li>
+<p><strong>Fiabilité absolue :</strong> Citations sources et traçabilité visuelle (page, document) pour éliminer l’incertitude.</p>
+</li>
+<li>
+<p><strong>Maîtrise technique :</strong> Ingestion de données non structurées, monitoring des hallucinations et boucles de feedback.</p>
+</li>
+<li>
+<p><strong>Conformité :</strong> Une architecture pensée pour les exigences du service public.</p>
+</li>
+<li>
+<p>code source : <a href="https://github.com/fkdia23/RAG---Deep-Linking-Search">https://github.com/fkdia23/RAG---Deep-Linking-Search</a></p>
+</li>
+<li>
+<p>Démo: voir section 6</p>
+</li>
+</ul>
+<h2 id="table-of-contents">Table of contents</h2>
+<ul>
+<li><a href="#1-le-d%C3%A9fi--pourquoi-les-r%C3%A9ponses-g%C3%A9n%C3%A9riques-ne-suffisvent-pas-pour-des-donn%C3%A9es-techniques-complexes"><strong>1. Le Défi : Pourquoi les réponses génériques ne suffisvent pas pour des données techniques complexes</strong></a></li>
+<li><a href="#2-la-solution-prototype--un-rag-qui-cite-surligne-et-renvoie-%C3%A0-la-source"><strong>2. La Solution Prototype : Un RAG qui cite, surligne et renvoie à la source</strong></a>
+<ul>
+<li><a href="#21-workflow-utilisateur">2.1 Workflow Utilisateur</a></li>
+</ul>
+</li>
+<li><a href="#3-larchitecture--choix-techniques-pour-la-pr%C3%A9cision-et-la-tra%C3%A7abilit%C3%A9"><strong>3. L’Architecture : Choix techniques pour la précision et la traçabilité</strong></a>
+<ul>
+<li><a href="#31-stack-technique-s%C3%A9lectionn%C3%A9e">3.1 Stack Technique Sélectionnée</a></li>
+<li><a href="#32-stack-technique-d%C3%A9taill%C3%A9e">3.2 Stack Technique Détaillée</a>
+<ul>
+<li><a href="#backend">Backend</a></li>
+<li><a href="#frontend">Frontend</a></li>
+<li><a href="#infrastructure">Infrastructure</a></li>
+</ul>
+</li>
+<li><a href="#33-flux-de-donn%C3%A9es">3.3 Flux de Données</a></li>
+</ul>
+</li>
+<li><a href="#4-approche-end-to-end--du-document-brut-%C3%A0-linterface-utilisateur"><strong>4. Approche End-to-End : Du document brut à l’interface utilisateur</strong></a>
+<ul>
+<li><a href="#41-justification-des-choix-techniques">4.1. Justification des Choix Techniques</a>
+<ul>
+<li><a href="#411-pourquoi-neo4j-base-de-donn%C3%A9es-graph-">4.1.1 Pourquoi Neo4j (Base de Données Graph) ?</a></li>
+<li><a href="#412-pourquoi-ollama-llm-local-">4.1.2 Pourquoi Ollama (LLM Local) ?</a></li>
+<li><a href="#413-pourquoi-fastapi--uv-">4.1.3 Pourquoi FastAPI + UV ?</a></li>
+</ul>
+</li>
+<li><a href="#45-architecture-de-chunking">4.5 Architecture de Chunking</a></li>
+<li><a href="#46-mod%C3%A8le-de-donn%C3%A9es-neo4j">4.6 Modèle de Données Neo4j</a>
+<ul>
+<li><a href="#sch%C3%A9ma-graphe">Schéma Graphe</a></li>
+<li><a href="#index-et-contraintes">Index et Contraintes</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#5-am%C3%A9lioration-">5. Amélioration :</a>
+<ul>
+<li>
+<ul>
+<li><a href="#m%C3%A9triques-cl%C3%A9s-%C3%A0-surveiller-en-continu"><strong>Métriques clés à surveiller en continu</strong></a></li>
+<li><a href="#observabilit%C3%A9-op%C3%A9rationnelle"><strong>Observabilité opérationnelle</strong></a></li>
+<li><a href="#backend-et-s%C3%A9curit%C3%A9"><strong>Backend et sécurité</strong></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#6--d%C3%A9mo-">6. 🎥 Démo :</a></li>
+</ul>
+<h2 id="1-le-défi--pourquoi-les-réponses-génériques-ne-suffisvent-pas-pour-des-données-techniques-complexes"><strong>1. Le Défi : Pourquoi les réponses génériques ne suffisvent pas pour des données techniques complexes</strong></h2>
+<ul>
+<li><strong>Contexte</strong> : Dans les domaines techniques (ingénierie, recherche, santé, droit), les utilisateurs ont besoin de <strong>réponses exactes</strong>, souvent <strong>sourcées</strong> et <strong>vérifiables</strong>.</li>
+<li><strong>Limites des chatbots classiques</strong> :
+<ul>
+<li>Réponses hallucinées ou trop génériques</li>
+<li>Aucune traçabilité vers la source</li>
+<li>Incapacité à justifier une affirmation par un extrait précis</li>
+</ul>
+</li>
+<li><strong>Conséquence</strong> : Perte de confiance, inutilisabilité dans des contextes critiques (audit, support technique, recherche)</li>
+<li><strong>Objectif du projet</strong> : Aller au-delà de la simple génération → <strong>répondre avec précision</strong> (<em>precision</em>) <strong>et prouvabilité</strong> (<em>provenance</em>).</li>
+</ul>
+<h2 id="2-la-solution-prototype--un-rag-qui-cite-surligne-et-renvoie-à-la-source"><strong>2. La Solution Prototype : Un RAG qui cite, surligne et renvoie à la source</strong></h2>
+<p>💡 La Solution : Un RAG sur mesure pour l’URSSAF
+Vision : L’assistant réglementaire intelligent
+Imaginons CLARA (Conseiller Législatif et Réglementaire Augmenté), un système RAG pensé spécifiquement pour l’URSSAF.</p>
+<ul>
+<li><strong>Fonctionnalités clés du prototype</strong> :
+<ul>
+<li>Réponse générée <strong>avec citation explicite</strong> : nom du document, auteur, section/page</li>
+<li><strong>Surlignage dynamique</strong> du passage source dans le texte original</li>
+<li><strong>Deep linking</strong> vers la page exacte du PDF source (ex: <code>#page=42</code>)</li>
+</ul>
+</li>
+<li><strong>Expérience utilisateur</strong> : L’utilisateur voit non seulement <em>quoi</em>, mais aussi <em>d’où</em> vient l’information → transparence totale.</li>
+<li><strong>Cas d’usage illustratif</strong> : Exemple concret (ex: ingénieur cherchant une spécification dans un manuel technique de 300 pages).</li>
+</ul>
+<h3 id="21-workflow-utilisateur">2.1 Workflow Utilisateur</h3>
+<pre class="astro-code astro-code-themes min-light night-owl" style="--shiki-light:#24292eff;--shiki-dark:#d6deeb;--shiki-light-bg:#ffffff;--shiki-dark-bg:#011627; overflow-x: auto;--file-name-offset: -0.75rem;" tabindex="0" data-language="plaintext"><code><span class="line"><span>┌─────────────────────────────────────────────────────────────────┐</span></span>
+<span class="line"><span>│                    1. INGESTION                                  │</span></span>
+<span class="line"><span>│  Utilisateur → Upload Documents → Traitement → Neo4j             │</span></span>
+<span class="line"><span>│  (PDF, DOCX, TXT, URL)                                          │</span></span>
+<span class="line"><span>└─────────────────────────────────────────────────────────────────┘</span></span>
+<span class="line"><span>                              ↓</span></span>
+<span class="line"><span>┌─────────────────────────────────────────────────────────────────┐</span></span>
+<span class="line"><span>│                    2. EMBEDDING                                  │</span></span>
+<span class="line"><span>│  Texte → Chunks → Ollama (nomic-embed-text) → Vecteurs         │</span></span>
+<span class="line"><span>│  Stockage avec métadonnées (page, position)                     │</span></span>
+<span class="line"><span>└─────────────────────────────────────────────────────────────────┘</span></span>
+<span class="line"><span>                              ↓</span></span>
+<span class="line"><span>┌─────────────────────────────────────────────────────────────────┐</span></span>
+<span class="line"><span>│                    3. REQUÊTE                                    │</span></span>
+<span class="line"><span>│  Question → Embedding → Recherche similaire → Top-K chunks      │</span></span>
+<span class="line"><span>│  Similarité cosine > 0.5                                        │</span></span>
+<span class="line"><span>└─────────────────────────────────────────────────────────────────┘</span></span>
+<span class="line"><span>                              ↓</span></span>
+<span class="line"><span>┌─────────────────────────────────────────────────────────────────┐</span></span>
+<span class="line"><span>│                    4. GÉNÉRATION                                 │</span></span>
+<span class="line"><span>│  Chunks + Question → LLM (Mistral) → Réponse contextuelle       │</span></span>
+<span class="line"><span>│  Avec citations et références précises                          │</span></span>
+<span class="line"><span>└─────────────────────────────────────────────────────────────────┘</span></span>
+<span class="line"><span>                              ↓</span></span>
+<span class="line"><span>┌─────────────────────────────────────────────────────────────────┐</span></span>
+<span class="line"><span>│                    5. PRÉSENTATION                               │</span></span>
+<span class="line"><span>│  Réponse + Sources (Fichier, Page, Texte surligné)             │</span></span>
+<span class="line"><span>│  Interface React interactive                                    │</span></span>
+<span class="line"><span>└─────────────────────────────────────────────────────────────────┘</span></span></code></pre>
+<hr>
+<h2 id="3-larchitecture--choix-techniques-pour-la-précision-et-la-traçabilité"><strong>3. L’Architecture : Choix techniques pour la précision et la traçabilité</strong></h2>
+<ul>
+<li><strong>Stratégie de chunking</strong> :
+<ul>
+<li>Découpage en <strong>blocs de 500 caractères avec overlap de 50</strong> pour préserver le contexte</li>
+<li>Enrichissement systématique par <strong>métadonnées</strong> : nom du fichier, numéro de page, position dans le document</li>
+</ul>
+</li>
+<li><strong>Base vectorielle</strong> :
+<ul>
+<li>Utilisation de <strong>Neo4j</strong> (version 5.14+) pour sa capacité native à combiner <strong>graphe + embeddings</strong></li>
+<li>Stockage des vecteurs dans des propriétés de nœuds <code>Chunk</code>, avec index vectoriel optimisé (<code>gds.similarity.cosine</code>)</li>
+</ul>
+</li>
+<li><strong>Modèle d’embedding</strong> :
+<ul>
+<li><code>nomic-embed-text</code> (via Ollama) : 768 dimensions, multilingue, performant sur le retrieval</li>
+</ul>
+</li>
+<li><strong>Deep Linking vers le PDF</strong> :
+<ul>
+<li>Extraction du texte <strong>page par page</strong> avec <code>PyMuPDF</code></li>
+<li>Génération d’URL de la forme <code>document.pdf#page=XX</code> à partir du numéro de page stocké dans les métadonnées</li>
+<li>Restitution directe dans l’interface utilisateur pour navigation instantanée</li>
+</ul>
+</li>
+</ul>
+<h3 id="31-stack-technique-sélectionnée">3.1 Stack Technique Sélectionnée</h3>
+<ul>
+<li><strong>Backend</strong> : FastAPI (Python 3.11), asynchrone, avec validation Pydantic</li>
+<li><strong>LLM local</strong> : Ollama (Mistral 7B pour génération, nomic-embed-text pour embeddings)</li>
+<li><strong>Stockage</strong> : Neo4j pour documents, chunks, embeddings et relations</li>
+<li><strong>Frontend</strong> : React 18 + TailwindCSS + PDF.js pour le surlignage et le deep linking</li>
+<li><strong>Infra</strong> : Docker Compose (Neo4j, Ollama, Backend, Frontend, Prometheus, Grafana)</li>
+<li><strong>Gestion des dépendances</strong> : <code>uv</code> (remplacement ultra-rapide de pip)</li>
+</ul>
+<hr>
+<pre class="astro-code astro-code-themes min-light night-owl" style="--shiki-light:#24292eff;--shiki-dark:#d6deeb;--shiki-light-bg:#ffffff;--shiki-dark-bg:#011627; overflow-x: auto;--file-name-offset: -0.75rem;" tabindex="0" data-language="plaintext"><code><span class="line"><span>┌────────────────────────────────────────────────────────────────────┐</span></span>
+<span class="line"><span>│                         COUCHE PRÉSENTATION                         │</span></span>
+<span class="line"><span>│  ┌──────────────────────────────────────────────────────────────┐  │</span></span>
+<span class="line"><span>│  │  React 18 + TailwindCSS                               │  │</span></span>
+<span class="line"><span>│  │  - Chat Interface                                            │  │</span></span>
+<span class="line"><span>│  │  - Document Upload                                           │  │</span></span>
+<span class="line"><span>│  │  - Source Reference Viewer                                   │  │</span></span>
+<span class="line"><span>│  └──────────────────────────────────────────────────────────────┘  │</span></span>
+<span class="line"><span>└────────────────────────────────────────────────────────────────────┘</span></span>
+<span class="line"><span>                              ↕ HTTP/REST</span></span>
+<span class="line"><span>┌────────────────────────────────────────────────────────────────────┐</span></span>
+<span class="line"><span>│                          COUCHE API                                 │</span></span>
+<span class="line"><span>│  ┌──────────────────────────────────────────────────────────────┐  │</span></span>
+<span class="line"><span>│  │  FastAPI (Python 3.11)                                       │  │</span></span>
+<span class="line"><span>│  │  - REST Endpoints                                            │  │</span></span>
+<span class="line"><span>│  │  - Upload Management                                         │  │</span></span>
+<span class="line"><span>│  │  - Query Processing                                          │  │</span></span>
+<span class="line"><span>│  │  - Prometheus Metrics                                        │  │</span></span>
+<span class="line"><span>│  └──────────────────────────────────────────────────────────────┘  │</span></span>
+<span class="line"><span>└────────────────────────────────────────────────────────────────────┘</span></span>
+<span class="line"><span>                              ↕</span></span>
+<span class="line"><span>┌────────────────────────────────────────────────────────────────────┐</span></span>
+<span class="line"><span>│                       COUCHE SERVICES                               │</span></span>
+<span class="line"><span>│  ┌─────────────────┐  ┌─────────────────┐  ┌──────────────────┐   │</span></span>
+<span class="line"><span>│  │  RAG Service    │  │ Doc Processor   │  │  Neo4j Service   │   │</span></span>
+<span class="line"><span>│  │  - Query        │  │ - Extract       │  │  - Store         │   │</span></span>
+<span class="line"><span>│  │  - Search       │  │ - Chunk         │  │  - Search        │   │</span></span>
+<span class="line"><span>│  │  - Generate     │  │ - Embed         │  │  - Retrieve      │   │</span></span>
+<span class="line"><span>│  └─────────────────┘  └─────────────────┘  └──────────────────┘   │</span></span>
+<span class="line"><span>└────────────────────────────────────────────────────────────────────┘</span></span>
+<span class="line"><span>                ↕                    ↕                    ↕</span></span>
+<span class="line"><span>┌──────────────────┐  ┌──────────────────┐  ┌──────────────────────┐</span></span>
+<span class="line"><span>│   Ollama (LLM)   │  │  Neo4j (Graph)   │  │  Prometheus/Grafana  │</span></span>
+<span class="line"><span>│  - Mistral       │  │  - Documents     │  │  - Metrics           │</span></span>
+<span class="line"><span>│  - nomic-embed   │  │  - Chunks        │  │  - Dashboards        │</span></span>
+<span class="line"><span>└──────────────────┘  └──────────────────┘  └──────────────────────┘</span></span></code></pre>
+<h3 id="32-stack-technique-détaillée">3.2 Stack Technique Détaillée</h3>
+<h4 id="backend">Backend</h4>
+<pre class="astro-code astro-code-themes min-light night-owl" style="--shiki-light:#24292eff;--shiki-dark:#d6deeb;--shiki-light-bg:#ffffff;--shiki-dark-bg:#011627; overflow-x: auto;--file-name-offset: -0.75rem;" tabindex="0" data-language="yaml"><code><span class="line"><span style="--shiki-light:#D32F2F;--shiki-dark:#7FDBCA">Language</span><span style="--shiki-light:#D32F2F;--shiki-dark:#D6DEEB">:</span><span style="--shiki-light:#22863A;--shiki-dark:#ECC48D"> Python 3.11+</span></span>
+<span class="line"><span style="--shiki-light:#D32F2F;--shiki-dark:#7FDBCA">Framework</span><span style="--shiki-light:#D32F2F;--shiki-dark:#D6DEEB">:</span><span style="--shiki-light:#22863A;--shiki-dark:#ECC48D"> FastAPI 0.104+</span></span>
+<span class="line"><span style="--shiki-light:#D32F2F;--shiki-dark:#7FDBCA">Package Manager</span><span style="--shiki-light:#D32F2F;--shiki-dark:#D6DEEB">:</span><span style="--shiki-light:#22863A;--shiki-dark:#ECC48D"> UV (ultra-fast pip alternative)</span></span>
+<span class="line"></span>
+<span class="line"><span style="--shiki-light:#D32F2F;--shiki-dark:#7FDBCA">Core Libraries</span><span style="--shiki-light:#D32F2F;--shiki-dark:#D6DEEB">:</span></span>
+<span class="line"><span style="--shiki-light:#24292EFF;--shiki-dark:#D6DEEB">  - </span><span style="--shiki-light:#D32F2F;--shiki-dark:#7FDBCA">langchain</span><span style="--shiki-light:#D32F2F;--shiki-dark:#D6DEEB">:</span><span style="--shiki-light:#22863A;--shiki-dark:#ECC48D"> Orchestration RAG</span></span>
+<span class="line"><span style="--shiki-light:#24292EFF;--shiki-dark:#D6DEEB">  - </span><span style="--shiki-light:#D32F2F;--shiki-dark:#7FDBCA">neo4j</span><span style="--shiki-light:#D32F2F;--shiki-dark:#D6DEEB">:</span><span style="--shiki-light:#22863A;--shiki-dark:#ECC48D"> Driver base de données</span></span>
+<span class="line"><span style="--shiki-light:#24292EFF;--shiki-dark:#D6DEEB">  - </span><span style="--shiki-light:#D32F2F;--shiki-dark:#7FDBCA">ollama</span><span style="--shiki-light:#D32F2F;--shiki-dark:#D6DEEB">:</span><span style="--shiki-light:#22863A;--shiki-dark:#ECC48D"> Interface LLM local</span></span>
+<span class="line"><span style="--shiki-light:#24292EFF;--shiki-dark:#D6DEEB">  - </span><span style="--shiki-light:#D32F2F;--shiki-dark:#7FDBCA">pypdf</span><span style="--shiki-light:#D32F2F;--shiki-dark:#D6DEEB">:</span><span style="--shiki-light:#22863A;--shiki-dark:#ECC48D"> Extraction PDF</span></span>
+<span class="line"><span style="--shiki-light:#24292EFF;--shiki-dark:#D6DEEB">  - </span><span style="--shiki-light:#D32F2F;--shiki-dark:#7FDBCA">python-docx</span><span style="--shiki-light:#D32F2F;--shiki-dark:#D6DEEB">:</span><span style="--shiki-light:#22863A;--shiki-dark:#ECC48D"> Extraction Word</span></span>
+<span class="line"><span style="--shiki-light:#24292EFF;--shiki-dark:#D6DEEB">  - </span><span style="--shiki-light:#D32F2F;--shiki-dark:#7FDBCA">chardet</span><span style="--shiki-light:#D32F2F;--shiki-dark:#D6DEEB">:</span><span style="--shiki-light:#22863A;--shiki-dark:#ECC48D"> Détection encodage UTF-8</span></span>
+<span class="line"><span style="--shiki-light:#24292EFF;--shiki-dark:#D6DEEB">  - </span><span style="--shiki-light:#D32F2F;--shiki-dark:#7FDBCA">prometheus-client</span><span style="--shiki-light:#D32F2F;--shiki-dark:#D6DEEB">:</span><span style="--shiki-light:#22863A;--shiki-dark:#ECC48D"> Métriques</span></span>
+<span class="line"></span>
+<span class="line"><span style="--shiki-light:#D32F2F;--shiki-dark:#7FDBCA">Dependencies</span><span style="--shiki-light:#D32F2F;--shiki-dark:#D6DEEB">:</span></span>
+<span class="line"><span style="--shiki-light:#24292EFF;--shiki-dark:#D6DEEB">  - </span><span style="--shiki-light:#D32F2F;--shiki-dark:#7FDBCA">pydantic</span><span style="--shiki-light:#D32F2F;--shiki-dark:#D6DEEB">:</span><span style="--shiki-light:#22863A;--shiki-dark:#ECC48D"> Validation données</span></span>
+<span class="line"><span style="--shiki-light:#24292EFF;--shiki-dark:#D6DEEB">  - </span><span style="--shiki-light:#D32F2F;--shiki-dark:#7FDBCA">aiofiles</span><span style="--shiki-light:#D32F2F;--shiki-dark:#D6DEEB">:</span><span style="--shiki-light:#22863A;--shiki-dark:#ECC48D"> Async file operations</span></span>
+<span class="line"><span style="--shiki-light:#24292EFF;--shiki-dark:#D6DEEB">  - </span><span style="--shiki-light:#D32F2F;--shiki-dark:#7FDBCA">uvicorn</span><span style="--shiki-light:#D32F2F;--shiki-dark:#D6DEEB">:</span><span style="--shiki-light:#22863A;--shiki-dark:#ECC48D"> ASGI server</span></span></code></pre>
+<h4 id="frontend">Frontend</h4>
+<pre class="astro-code astro-code-themes min-light night-owl" style="--shiki-light:#24292eff;--shiki-dark:#d6deeb;--shiki-light-bg:#ffffff;--shiki-dark-bg:#011627; overflow-x: auto;--file-name-offset: -0.75rem;" tabindex="0" data-language="yaml"><code><span class="line"><span style="--shiki-light:#D32F2F;--shiki-dark:#7FDBCA">Framework</span><span style="--shiki-light:#D32F2F;--shiki-dark:#D6DEEB">:</span><span style="--shiki-light:#22863A;--shiki-dark:#ECC48D"> React 18</span></span>
+<span class="line"><span style="--shiki-light:#D32F2F;--shiki-dark:#7FDBCA">Build Tool</span><span style="--shiki-light:#D32F2F;--shiki-dark:#D6DEEB">:</span><span style="--shiki-light:#22863A;--shiki-dark:#ECC48D"> Vite 5</span></span>
+<span class="line"><span style="--shiki-light:#D32F2F;--shiki-dark:#7FDBCA">Styling</span><span style="--shiki-light:#D32F2F;--shiki-dark:#D6DEEB">:</span><span style="--shiki-light:#22863A;--shiki-dark:#ECC48D"> TailwindCSS 3</span></span>
+<span class="line"><span style="--shiki-light:#D32F2F;--shiki-dark:#7FDBCA">HTTP Client</span><span style="--shiki-light:#D32F2F;--shiki-dark:#D6DEEB">:</span><span style="--shiki-light:#22863A;--shiki-dark:#ECC48D"> Axios</span></span>
+<span class="line"></span>
+<span class="line"><span style="--shiki-light:#D32F2F;--shiki-dark:#7FDBCA">Features</span><span style="--shiki-light:#D32F2F;--shiki-dark:#D6DEEB">:</span></span>
+<span class="line"><span style="--shiki-light:#24292EFF;--shiki-dark:#D6DEEB">  - </span><span style="--shiki-light:#22863A;--shiki-dark:#ECC48D">Real-time chat interface</span></span>
+<span class="line"><span style="--shiki-light:#24292EFF;--shiki-dark:#D6DEEB">  - </span><span style="--shiki-light:#22863A;--shiki-dark:#ECC48D">Drag &#x26; drop file upload</span></span>
+<span class="line"><span style="--shiki-light:#24292EFF;--shiki-dark:#D6DEEB">  - </span><span style="--shiki-light:#22863A;--shiki-dark:#ECC48D">Source highlighting</span></span>
+<span class="line"><span style="--shiki-light:#24292EFF;--shiki-dark:#D6DEEB">  - </span><span style="--shiki-light:#22863A;--shiki-dark:#ECC48D">Responsive design</span></span></code></pre>
+<h4 id="infrastructure">Infrastructure</h4>
+<pre class="astro-code astro-code-themes min-light night-owl" style="--shiki-light:#24292eff;--shiki-dark:#d6deeb;--shiki-light-bg:#ffffff;--shiki-dark-bg:#011627; overflow-x: auto;--file-name-offset: -0.75rem;" tabindex="0" data-language="yaml"><code><span class="line"><span style="--shiki-light:#D32F2F;--shiki-dark:#7FDBCA">Orchestration</span><span style="--shiki-light:#D32F2F;--shiki-dark:#D6DEEB">:</span><span style="--shiki-light:#22863A;--shiki-dark:#ECC48D"> Docker Compose</span></span>
+<span class="line"><span style="--shiki-light:#D32F2F;--shiki-dark:#7FDBCA">Containers</span><span style="--shiki-light:#D32F2F;--shiki-dark:#D6DEEB">:</span></span>
+<span class="line"><span style="--shiki-light:#24292EFF;--shiki-dark:#D6DEEB">  - </span><span style="--shiki-light:#22863A;--shiki-dark:#ECC48D">Neo4j 5.14 (Community)</span></span>
+<span class="line"><span style="--shiki-light:#24292EFF;--shiki-dark:#D6DEEB">  - </span><span style="--shiki-light:#22863A;--shiki-dark:#ECC48D">Ollama (Latest)</span></span>
+<span class="line"><span style="--shiki-light:#24292EFF;--shiki-dark:#D6DEEB">  - </span><span style="--shiki-light:#22863A;--shiki-dark:#ECC48D">FastAPI Backend</span></span>
+<span class="line"><span style="--shiki-light:#24292EFF;--shiki-dark:#D6DEEB">  - </span><span style="--shiki-light:#22863A;--shiki-dark:#ECC48D">React Frontend</span></span>
+<span class="line"><span style="--shiki-light:#24292EFF;--shiki-dark:#D6DEEB">  - </span><span style="--shiki-light:#22863A;--shiki-dark:#ECC48D">Prometheus</span></span>
+<span class="line"><span style="--shiki-light:#24292EFF;--shiki-dark:#D6DEEB">  - </span><span style="--shiki-light:#22863A;--shiki-dark:#ECC48D">Grafana</span></span>
+<span class="line"></span>
+<span class="line"><span style="--shiki-light:#D32F2F;--shiki-dark:#7FDBCA">Storage</span><span style="--shiki-light:#D32F2F;--shiki-dark:#D6DEEB">:</span></span>
+<span class="line"><span style="--shiki-light:#24292EFF;--shiki-dark:#D6DEEB">  - </span><span style="--shiki-light:#D32F2F;--shiki-dark:#7FDBCA">neo4j_data</span><span style="--shiki-light:#D32F2F;--shiki-dark:#D6DEEB">:</span><span style="--shiki-light:#22863A;--shiki-dark:#ECC48D"> Graph persistence</span></span>
+<span class="line"><span style="--shiki-light:#24292EFF;--shiki-dark:#D6DEEB">  - </span><span style="--shiki-light:#D32F2F;--shiki-dark:#7FDBCA">ollama_data</span><span style="--shiki-light:#D32F2F;--shiki-dark:#D6DEEB">:</span><span style="--shiki-light:#22863A;--shiki-dark:#ECC48D"> Models cache</span></span>
+<span class="line"><span style="--shiki-light:#24292EFF;--shiki-dark:#D6DEEB">  - </span><span style="--shiki-light:#D32F2F;--shiki-dark:#7FDBCA">uploads</span><span style="--shiki-light:#D32F2F;--shiki-dark:#D6DEEB">:</span><span style="--shiki-light:#22863A;--shiki-dark:#ECC48D"> Document storage</span></span></code></pre>
+<h3 id="33-flux-de-données">3.3 Flux de Données</h3>
+<p><img alt="alt text" loading="lazy" decoding="async" fetchpriority="auto" sizes="(min-width: 7325px) 7325px, 100vw"  data-astro-image="constrained" width="7325" height="7015" src="/_astro/diagram%20system.AzlQ82-6_ZdPRmG.webp" srcset="/_astro/diagram%20system.AzlQ82-6_27Bqi3.webp 640w, /_astro/diagram%20system.AzlQ82-6_ZcgNOW.webp 750w, /_astro/diagram%20system.AzlQ82-6_ZFOst2.webp 828w, /_astro/diagram%20system.AzlQ82-6_ulG1m.webp 1080w, /_astro/diagram%20system.AzlQ82-6_ZATOsG.webp 1280w, /_astro/diagram%20system.AzlQ82-6_1U3tDu.webp 1668w, /_astro/diagram%20system.AzlQ82-6_58GyH.webp 2048w, /_astro/diagram%20system.AzlQ82-6_ZFHznv.webp 2560w, /_astro/diagram%20system.AzlQ82-6_ZdPRmG.webp 7325w"></p>
+<hr>
+<h2 id="4-approche-end-to-end--du-document-brut-à-linterface-utilisateur"><strong>4. Approche End-to-End : Du document brut à l’interface utilisateur</strong></h2>
+<p>Le système suit un pipeline linéaire et observable :</p>
+<ol>
+<li><strong>Ingestion</strong> : L’utilisateur dépose un document (PDF, DOCX, etc.). Le backend extrait le texte <strong>page par page</strong>.</li>
+<li><strong>Prétraitement</strong> : Le texte est découpé en chunks de 500 caractères (50 de chevauchement) et enrichi avec :
+<ul>
+<li><code>filename</code>, <code>page_number</code>, <code>start_char</code>, <code>end_char</code></li>
+</ul>
+</li>
+<li><strong>Vectorisation</strong> : Chaque chunk est transformé en vecteur via <code>nomic-embed-text</code> et stocké dans Neo4j avec ses métadonnées.</li>
+<li><strong>Requête</strong> : À chaque question, le système :
+<ul>
+<li>Convertit la requête en vecteur</li>
+<li>Interroge Neo4j pour les chunks les plus similaires (seuil cosine > 0.5)</li>
+<li>Récupère les extraits + métadonnées complètes</li>
+</ul>
+</li>
+<li><strong>Génération</strong> : Le LLM (Mistral) reçoit la question + les chunks pertinents et génère une réponse <strong>avec citations intégrées</strong>.</li>
+<li><strong>Présentation</strong> : L’interface affiche :
+<ul>
+<li>La réponse synthétique</li>
+<li>Les sources : nom du fichier, page, extrait surligné</li>
+<li>Un lien cliquable (<code>#page=XX</code>) ouvrant directement la page du PDF</li>
+</ul>
+</li>
+</ol>
+<p>Cette chaîne garantit <strong>reproductibilité</strong>, <strong>traçabilité</strong> et <strong>expérience utilisateur transparente</strong>.</p>
+<h3 id="41-justification-des-choix-techniques">4.1. Justification des Choix Techniques</h3>
+<h4 id="411-pourquoi-neo4j-base-de-données-graph">4.1.1 Pourquoi Neo4j (Base de Données Graph) ?</h4>
+<p><strong>Avantages pour le RAG:</strong></p>
+<ol>
+<li>
+<p><strong>Relations Naturelles</strong></p>
+<pre class="astro-code astro-code-themes min-light night-owl" style="--shiki-light:#24292eff;--shiki-dark:#d6deeb;--shiki-light-bg:#ffffff;--shiki-dark-bg:#011627; overflow-x: auto;--file-name-offset: -0.75rem;" tabindex="0" data-language="cypher"><code><span class="line"><span style="--shiki-light:#24292EFF;--shiki-dark:#D6DEEB"> (</span><span style="--shiki-light:#24292EFF;--shiki-dark:#C5E478">Document</span><span style="--shiki-light:#24292EFF;--shiki-dark:#D6DEEB">)</span><span style="--shiki-light:#6F42C1;--shiki-dark:#C5E478">-</span><span style="--shiki-light:#D32F2F;--shiki-dark:#7FDBCA">[:</span><span style="--shiki-light:#24292EFF;--shiki-dark:#FFCB8B">CONTAINS</span><span style="--shiki-light:#D32F2F;--shiki-dark:#7FDBCA">]</span><span style="--shiki-light:#6F42C1;--shiki-dark:#C5E478">-></span><span style="--shiki-light:#24292EFF;--shiki-dark:#D6DEEB">(</span><span style="--shiki-light:#24292EFF;--shiki-dark:#C5E478">Chunk</span><span style="--shiki-light:#24292EFF;--shiki-dark:#D6DEEB">)</span><span style="--shiki-light:#6F42C1;--shiki-dark:#C5E478">-</span><span style="--shiki-light:#D32F2F;--shiki-dark:#7FDBCA">[:</span><span style="--shiki-light:#24292EFF;--shiki-dark:#FFCB8B">RELATES_TO</span><span style="--shiki-light:#D32F2F;--shiki-dark:#7FDBCA">]</span><span style="--shiki-light:#6F42C1;--shiki-dark:#C5E478">-></span><span style="--shiki-light:#24292EFF;--shiki-dark:#D6DEEB">(</span><span style="--shiki-light:#24292EFF;--shiki-dark:#C5E478">Concept</span><span style="--shiki-light:#24292EFF;--shiki-dark:#D6DEEB">)</span></span></code></pre>
+<ul>
+<li>Modélisation intuitive des relations document-chunk</li>
+<li>Traversée rapide pour trouver documents connexes</li>
+<li>Extension future : graphe de connaissances (entités, concepts)</li>
+</ul>
+</li>
+<li>
+<p><strong>Recherche Vectorielle Native</strong></p>
+<pre class="astro-code astro-code-themes min-light night-owl" style="--shiki-light:#24292eff;--shiki-dark:#d6deeb;--shiki-light-bg:#ffffff;--shiki-dark-bg:#011627; overflow-x: auto;--file-name-offset: -0.75rem;" tabindex="0" data-language="cypher"><code><span class="line"><span style="--shiki-light:#C2C3C5;--shiki-light-font-style:inherit;--shiki-dark:#637777;--shiki-dark-font-style:italic">// Neo4j 5.x supporte les embeddings</span></span>
+<span class="line"><span style="--shiki-light:#D32F2F;--shiki-light-font-style:inherit;--shiki-dark:#C792EA;--shiki-dark-font-style:italic">MATCH</span><span style="--shiki-light:#24292EFF;--shiki-dark:#D6DEEB"> (</span><span style="--shiki-light:#24292EFF;--shiki-dark:#C5E478">c</span><span style="--shiki-light:#24292EFF;--shiki-dark:#D6DEEB">:</span><span style="--shiki-light:#24292EFF;--shiki-dark:#C5E478">Chunk</span><span style="--shiki-light:#24292EFF;--shiki-dark:#D6DEEB">)</span></span>
+<span class="line"><span style="--shiki-light:#D32F2F;--shiki-light-font-style:inherit;--shiki-dark:#C792EA;--shiki-dark-font-style:italic">WITH</span><span style="--shiki-light:#24292EFF;--shiki-dark:#C5E478"> c</span><span style="--shiki-light:#24292EFF;--shiki-dark:#D6DEEB">, </span><span style="--shiki-light:#24292EFF;--shiki-dark:#C5E478">gds</span><span style="--shiki-light:#24292EFF;--shiki-dark:#D6DEEB">.</span><span style="--shiki-light:#24292EFF;--shiki-dark:#C5E478">similarity</span><span style="--shiki-light:#24292EFF;--shiki-dark:#D6DEEB">.</span><span style="--shiki-light:#24292EFF;--shiki-dark:#C5E478">cosine</span><span style="--shiki-light:#24292EFF;--shiki-dark:#D6DEEB">(</span><span style="--shiki-light:#24292EFF;--shiki-dark:#C5E478">c</span><span style="--shiki-light:#24292EFF;--shiki-dark:#D6DEEB">.</span><span style="--shiki-light:#24292EFF;--shiki-dark:#C5E478">embedding</span><span style="--shiki-light:#24292EFF;--shiki-dark:#D6DEEB">, $</span><span style="--shiki-light:#24292EFF;--shiki-dark:#C5E478">query_vector</span><span style="--shiki-light:#24292EFF;--shiki-dark:#D6DEEB">) </span><span style="--shiki-light:#D32F2F;--shiki-light-font-style:inherit;--shiki-dark:#C792EA;--shiki-dark-font-style:italic">AS</span><span style="--shiki-light:#24292EFF;--shiki-dark:#C5E478"> score</span></span>
+<span class="line"><span style="--shiki-light:#D32F2F;--shiki-light-font-style:inherit;--shiki-dark:#C792EA;--shiki-dark-font-style:italic">WHERE</span><span style="--shiki-light:#24292EFF;--shiki-dark:#C5E478"> score</span><span style="--shiki-light:#D32F2F;--shiki-dark:#7FDBCA"> ></span><span style="--shiki-light:#1976D2;--shiki-dark:#F78C6C"> 0.5</span></span>
+<span class="line"><span style="--shiki-light:#D32F2F;--shiki-light-font-style:inherit;--shiki-dark:#C792EA;--shiki-dark-font-style:italic">RETURN</span><span style="--shiki-light:#24292EFF;--shiki-dark:#C5E478"> c</span><span style="--shiki-light:#D32F2F;--shiki-light-font-style:inherit;--shiki-dark:#C792EA;--shiki-dark-font-style:italic"> ORDER BY</span><span style="--shiki-light:#24292EFF;--shiki-dark:#C5E478"> score</span><span style="--shiki-light:#D32F2F;--shiki-dark:#C792EA"> DESC</span></span></code></pre>
+</li>
+<li>
+<p><strong>Performance</strong></p>
+<ul>
+<li>Index sur embeddings : recherche &#x3C; 100ms</li>
+<li>Cypher optimisé pour graphes</li>
+<li>Mieux que PostgreSQL + pgvector pour relations complexes</li>
+</ul>
+</li>
+<li>
+<p><strong>Évolutivité</strong></p>
+<ul>
+<li>Ajout facile de nœuds (Entities, Topics, Authors)</li>
+<li>Requêtes multi-hop : “Documents similaires à celui-ci”</li>
+<li>Traçabilité : historique des modifications</li>
+</ul>
+</li>
+</ol>
+<h4 id="412-pourquoi-ollama-llm-local">4.1.2 Pourquoi Ollama (LLM Local) ?</h4>
+<p><strong>Raisons Stratégiques:</strong></p>
+<ol>
+<li>
+<p><strong>Confidentialité et Conformité</strong></p>
+<ul>
+<li>Données sensibles ne quittent jamais l’infrastructure</li>
+<li>Conformité RGPD garantie</li>
+<li>Pas de risque de fuite vers OpenAI/Anthropic</li>
+</ul>
+</li>
+<li>
+<p><strong>Performance Prévisible</strong></p>
+<ul>
+<li>Pas de rate limits</li>
+<li>Latence constante (1-3s)</li>
+<li>Pas de dépendance réseau</li>
+</ul>
+</li>
+<li>
+<p><strong>Personnalisation</strong></p>
+<ul>
+<li>Fine-tuning possible sur données métier</li>
+<li>Contrôle total des prompts</li>
+<li>Support multilingue (français natif)</li>
+</ul>
+</li>
+</ol>
+<p><strong>Modèles Choisis:</strong></p>
+<ul>
+<li><strong>Mistral 7B</strong> pour génération
+<ul>
+<li>Excellent en français</li>
+<li>Performances comparables GPT-3.5</li>
+<li>Rapide (2-3s sur GPU)</li>
+</ul>
+</li>
+<li><strong>nomic-embed-text</strong> pour embeddings
+<ul>
+<li>768 dimensions</li>
+<li>Optimisé retrieval</li>
+<li>Support multilingue</li>
+</ul>
+</li>
+</ul>
+<h4 id="413-pourquoi-fastapi--uv">4.1.3 Pourquoi FastAPI + UV ?</h4>
+<p><strong>FastAPI:</strong></p>
+<ul>
+<li><strong>Performance</strong> : Async natif (3x plus rapide que Flask)</li>
+<li><strong>Documentation</strong> : Swagger automatique</li>
+<li><strong>Typage</strong> : Pydantic pour validation</li>
+<li><strong>WebSocket</strong> : Support temps réel futur</li>
+</ul>
+<p><strong>UV (Package Manager):</strong></p>
+<pre class="astro-code astro-code-themes min-light night-owl" style="--shiki-light:#24292eff;--shiki-dark:#d6deeb;--shiki-light-bg:#ffffff;--shiki-dark-bg:#011627; overflow-x: auto;--file-name-offset: -0.75rem;" tabindex="0" data-language="bash"><code><span class="line"><span style="--shiki-light:#C2C3C5;--shiki-light-font-style:inherit;--shiki-dark:#637777;--shiki-dark-font-style:italic"># Comparaison vitesse installation</span></span>
+<span class="line"><span style="--shiki-light:#6F42C1;--shiki-light-font-style:inherit;--shiki-dark:#82AAFF;--shiki-dark-font-style:italic">pip</span><span style="--shiki-light:#2B5581;--shiki-dark:#ECC48D"> install</span><span style="--shiki-light:#2B5581;--shiki-dark:#82AAFF"> -r</span><span style="--shiki-light:#2B5581;--shiki-dark:#ECC48D"> requirements.txt</span><span style="--shiki-light:#C2C3C5;--shiki-light-font-style:inherit;--shiki-dark:#637777;--shiki-dark-font-style:italic">    # 45s</span></span>
+<span class="line"><span style="--shiki-light:#6F42C1;--shiki-light-font-style:inherit;--shiki-dark:#82AAFF;--shiki-dark-font-style:italic">poetry</span><span style="--shiki-light:#2B5581;--shiki-dark:#ECC48D"> install</span><span style="--shiki-light:#C2C3C5;--shiki-light-font-style:inherit;--shiki-dark:#637777;--shiki-dark-font-style:italic">                      # 35s</span></span>
+<span class="line"><span style="--shiki-light:#6F42C1;--shiki-light-font-style:inherit;--shiki-dark:#82AAFF;--shiki-dark-font-style:italic">uv</span><span style="--shiki-light:#2B5581;--shiki-dark:#ECC48D"> pip</span><span style="--shiki-light:#2B5581;--shiki-dark:#ECC48D"> install</span><span style="--shiki-light:#2B5581;--shiki-dark:#82AAFF"> -r</span><span style="--shiki-light:#2B5581;--shiki-dark:#ECC48D"> requirements.txt</span><span style="--shiki-light:#C2C3C5;--shiki-light-font-style:inherit;--shiki-dark:#637777;--shiki-dark-font-style:italic">  # 8s ✅</span></span></code></pre>
+<ul>
+<li><strong>10x plus rapide</strong> que pip</li>
+<li>Résolution dépendances ultra-rapide</li>
+<li>Compatible pip (drop-in replacement)</li>
+</ul>
+<h3 id="45-architecture-de-chunking">4.5 Architecture de Chunking</h3>
+<p><strong>Stratégie Choisie:</strong></p>
+<pre class="astro-code astro-code-themes min-light night-owl" style="--shiki-light:#24292eff;--shiki-dark:#d6deeb;--shiki-light-bg:#ffffff;--shiki-dark-bg:#011627; overflow-x: auto;--file-name-offset: -0.75rem;" tabindex="0" data-language="python"><code><span class="line"><span style="--shiki-light:#24292EFF;--shiki-dark:#82AAFF">CHUNK_SIZE</span><span style="--shiki-light:#D32F2F;--shiki-dark:#C792EA"> =</span><span style="--shiki-light:#1976D2;--shiki-dark:#F78C6C"> 500</span><span style="--shiki-light:#24292EFF;--shiki-dark:#D6DEEB"> caractères</span></span>
+<span class="line"><span style="--shiki-light:#24292EFF;--shiki-dark:#82AAFF">CHUNK_OVERLAP</span><span style="--shiki-light:#D32F2F;--shiki-dark:#C792EA"> =</span><span style="--shiki-light:#1976D2;--shiki-dark:#F78C6C"> 50</span><span style="--shiki-light:#24292EFF;--shiki-dark:#D6DEEB"> caractères</span></span>
+<span class="line"></span>
+<span class="line"><span style="--shiki-light:#24292EFF;--shiki-dark:#D6DEEB">Exemple</span><span style="--shiki-light:#212121;--shiki-dark:#D6DEEB">:</span></span>
+<span class="line"><span style="--shiki-light:#24292EFF;--shiki-dark:#D6DEEB">Document</span><span style="--shiki-light:#212121;--shiki-dark:#D6DEEB">:</span><span style="--shiki-light:#22863A;--shiki-dark:#D9F5DD"> "</span><span style="--shiki-light:#22863A;--shiki-dark:#ECC48D">Lorem ipsum... [2000 chars]</span><span style="--shiki-light:#22863A;--shiki-dark:#D9F5DD">"</span></span>
+<span class="line"><span style="--shiki-light:#24292EFF;--shiki-dark:#D6DEEB">→ Chunk </span><span style="--shiki-light:#1976D2;--shiki-dark:#F78C6C">1</span><span style="--shiki-light:#212121;--shiki-dark:#D6DEEB">:</span><span style="--shiki-light:#24292EFF;--shiki-dark:#D6DEEB"> chars </span><span style="--shiki-light:#1976D2;--shiki-dark:#F78C6C">0</span><span style="--shiki-light:#D32F2F;--shiki-dark:#C792EA">-</span><span style="--shiki-light:#1976D2;--shiki-dark:#F78C6C">500</span></span>
+<span class="line"><span style="--shiki-light:#24292EFF;--shiki-dark:#D6DEEB">→ Chunk </span><span style="--shiki-light:#1976D2;--shiki-dark:#F78C6C">2</span><span style="--shiki-light:#212121;--shiki-dark:#D6DEEB">:</span><span style="--shiki-light:#24292EFF;--shiki-dark:#D6DEEB"> chars </span><span style="--shiki-light:#1976D2;--shiki-dark:#F78C6C">450</span><span style="--shiki-light:#D32F2F;--shiki-dark:#C792EA">-</span><span style="--shiki-light:#1976D2;--shiki-dark:#F78C6C">950</span><span style="--shiki-light:#C2C3C5;--shiki-light-font-style:inherit;--shiki-dark:#637777;--shiki-dark-font-style:italic">   # Overlap 50</span></span>
+<span class="line"><span style="--shiki-light:#24292EFF;--shiki-dark:#D6DEEB">→ Chunk </span><span style="--shiki-light:#1976D2;--shiki-dark:#F78C6C">3</span><span style="--shiki-light:#212121;--shiki-dark:#D6DEEB">:</span><span style="--shiki-light:#24292EFF;--shiki-dark:#D6DEEB"> chars </span><span style="--shiki-light:#1976D2;--shiki-dark:#F78C6C">900</span><span style="--shiki-light:#D32F2F;--shiki-dark:#C792EA">-</span><span style="--shiki-light:#1976D2;--shiki-dark:#F78C6C">1400</span></span>
+<span class="line"><span style="--shiki-light:#24292EFF;--shiki-dark:#D6DEEB">→ Chunk </span><span style="--shiki-light:#1976D2;--shiki-dark:#F78C6C">4</span><span style="--shiki-light:#212121;--shiki-dark:#D6DEEB">:</span><span style="--shiki-light:#24292EFF;--shiki-dark:#D6DEEB"> chars </span><span style="--shiki-light:#1976D2;--shiki-dark:#F78C6C">1350</span><span style="--shiki-light:#D32F2F;--shiki-dark:#C792EA">-</span><span style="--shiki-light:#1976D2;--shiki-dark:#F78C6C">1850</span></span></code></pre>
+<p><strong>Justification:</strong></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Taille Chunk</th><th>Avantages</th><th>Inconvénients</th><th>Verdict</th></tr></thead><tbody><tr><td>100-200 chars</td><td>Précis</td><td>Perd contexte</td><td>❌ Trop petit</td></tr><tr><td><strong>500 chars</strong></td><td>✅ <strong>Balance</strong></td><td>-</td><td>✅ <strong>Optimal</strong></td></tr><tr><td>1000+ chars</td><td>Plus contexte</td><td>Bruit, lent</td><td>❌ Trop gros</td></tr></tbody></table>
+<p><strong>Overlap:</strong></p>
+<ul>
+<li>50 chars garantit pas de coupure phrases</li>
+<li>Évite perte d’information aux frontières</li>
+<li>Coût: +10% stockage (acceptable)</li>
+</ul>
+<h3 id="46-modèle-de-données-neo4j">4.6 Modèle de Données Neo4j</h3>
+<h4 id="schéma-graphe">Schéma Graphe</h4>
+<pre class="astro-code astro-code-themes min-light night-owl" style="--shiki-light:#24292eff;--shiki-dark:#d6deeb;--shiki-light-bg:#ffffff;--shiki-dark-bg:#011627; overflow-x: auto;--file-name-offset: -0.75rem;" tabindex="0" data-language="cypher"><code><span class="line"><span style="--shiki-light:#C2C3C5;--shiki-light-font-style:inherit;--shiki-dark:#637777;--shiki-dark-font-style:italic">// Node: Document</span></span>
+<span class="line"><span style="--shiki-light:#D32F2F;--shiki-dark:#C792EA">CREATE</span><span style="--shiki-light:#24292EFF;--shiki-dark:#D6DEEB"> (</span><span style="--shiki-light:#24292EFF;--shiki-dark:#C5E478">d</span><span style="--shiki-light:#24292EFF;--shiki-dark:#D6DEEB">:</span><span style="--shiki-light:#24292EFF;--shiki-dark:#C5E478">Document</span><span style="--shiki-light:#D32F2F;--shiki-light-font-style:inherit;--shiki-dark:#C792EA;--shiki-dark-font-style:italic"> {</span></span>
+<span class="line"><span style="--shiki-light:#24292EFF;--shiki-dark:#C5E478">  id</span><span style="--shiki-light:#D32F2F;--shiki-light-font-style:inherit;--shiki-dark:#C792EA;--shiki-dark-font-style:italic">:</span><span style="--shiki-light:#22863A;--shiki-dark:#ECC48D"> "md5_hash_filename"</span><span style="--shiki-light:#D32F2F;--shiki-light-font-style:inherit;--shiki-dark:#C792EA;--shiki-dark-font-style:italic">,</span></span>
+<span class="line"><span style="--shiki-light:#24292EFF;--shiki-dark:#C5E478">  filename</span><span style="--shiki-light:#D32F2F;--shiki-light-font-style:inherit;--shiki-dark:#C792EA;--shiki-dark-font-style:italic">:</span><span style="--shiki-light:#22863A;--shiki-dark:#ECC48D"> "politique_remboursement.pdf"</span><span style="--shiki-light:#D32F2F;--shiki-light-font-style:inherit;--shiki-dark:#C792EA;--shiki-dark-font-style:italic">,</span></span>
+<span class="line"><span style="--shiki-light:#24292EFF;--shiki-dark:#C5E478">  created_at</span><span style="--shiki-light:#D32F2F;--shiki-light-font-style:inherit;--shiki-dark:#C792EA;--shiki-dark-font-style:italic">:</span><span style="--shiki-light:#24292EFF;--shiki-dark:#C5E478"> datetime</span><span style="--shiki-light:#24292EFF;--shiki-dark:#D6DEEB">()</span><span style="--shiki-light:#D32F2F;--shiki-light-font-style:inherit;--shiki-dark:#C792EA;--shiki-dark-font-style:italic">,</span></span>
+<span class="line"><span style="--shiki-light:#24292EFF;--shiki-dark:#C5E478">  file_size</span><span style="--shiki-light:#D32F2F;--shiki-light-font-style:inherit;--shiki-dark:#C792EA;--shiki-dark-font-style:italic">:</span><span style="--shiki-light:#1976D2;--shiki-dark:#F78C6C"> 2048576</span><span style="--shiki-light:#D32F2F;--shiki-light-font-style:inherit;--shiki-dark:#C792EA;--shiki-dark-font-style:italic">,</span></span>
+<span class="line"><span style="--shiki-light:#24292EFF;--shiki-dark:#C5E478">  file_type</span><span style="--shiki-light:#D32F2F;--shiki-light-font-style:inherit;--shiki-dark:#C792EA;--shiki-dark-font-style:italic">:</span><span style="--shiki-light:#22863A;--shiki-dark:#ECC48D"> "pdf"</span><span style="--shiki-light:#D32F2F;--shiki-light-font-style:inherit;--shiki-dark:#C792EA;--shiki-dark-font-style:italic">,</span></span>
+<span class="line"><span style="--shiki-light:#24292EFF;--shiki-dark:#C5E478">  page_count</span><span style="--shiki-light:#D32F2F;--shiki-light-font-style:inherit;--shiki-dark:#C792EA;--shiki-dark-font-style:italic">:</span><span style="--shiki-light:#1976D2;--shiki-dark:#F78C6C"> 15</span></span>
+<span class="line"><span style="--shiki-light:#D32F2F;--shiki-light-font-style:inherit;--shiki-dark:#C792EA;--shiki-dark-font-style:italic">}</span><span style="--shiki-light:#24292EFF;--shiki-dark:#D6DEEB">)</span></span>
+<span class="line"></span>
+<span class="line"><span style="--shiki-light:#C2C3C5;--shiki-light-font-style:inherit;--shiki-dark:#637777;--shiki-dark-font-style:italic">// Node: Chunk</span></span>
+<span class="line"><span style="--shiki-light:#D32F2F;--shiki-dark:#C792EA">CREATE</span><span style="--shiki-light:#24292EFF;--shiki-dark:#D6DEEB"> (</span><span style="--shiki-light:#24292EFF;--shiki-dark:#C5E478">c</span><span style="--shiki-light:#24292EFF;--shiki-dark:#D6DEEB">:</span><span style="--shiki-light:#24292EFF;--shiki-dark:#C5E478">Chunk</span><span style="--shiki-light:#D32F2F;--shiki-light-font-style:inherit;--shiki-dark:#C792EA;--shiki-dark-font-style:italic"> {</span></span>
+<span class="line"><span style="--shiki-light:#24292EFF;--shiki-dark:#C5E478">  id</span><span style="--shiki-light:#D32F2F;--shiki-light-font-style:inherit;--shiki-dark:#C792EA;--shiki-dark-font-style:italic">:</span><span style="--shiki-light:#22863A;--shiki-dark:#ECC48D"> "md5_filename_chunk_0"</span><span style="--shiki-light:#D32F2F;--shiki-light-font-style:inherit;--shiki-dark:#C792EA;--shiki-dark-font-style:italic">,</span></span>
+<span class="line"><span style="--shiki-light:#24292EFF;--shiki-dark:#C5E478">  text</span><span style="--shiki-light:#D32F2F;--shiki-light-font-style:inherit;--shiki-dark:#C792EA;--shiki-dark-font-style:italic">:</span><span style="--shiki-light:#22863A;--shiki-dark:#ECC48D"> "Les remboursements sont..."</span><span style="--shiki-light:#D32F2F;--shiki-light-font-style:inherit;--shiki-dark:#C792EA;--shiki-dark-font-style:italic">,</span></span>
+<span class="line"><span style="--shiki-light:#24292EFF;--shiki-dark:#C5E478">  page_number</span><span style="--shiki-light:#D32F2F;--shiki-light-font-style:inherit;--shiki-dark:#C792EA;--shiki-dark-font-style:italic">:</span><span style="--shiki-light:#1976D2;--shiki-dark:#F78C6C"> 3</span><span style="--shiki-light:#D32F2F;--shiki-light-font-style:inherit;--shiki-dark:#C792EA;--shiki-dark-font-style:italic">,</span></span>
+<span class="line"><span style="--shiki-light:#24292EFF;--shiki-dark:#C5E478">  chunk_index</span><span style="--shiki-light:#D32F2F;--shiki-light-font-style:inherit;--shiki-dark:#C792EA;--shiki-dark-font-style:italic">:</span><span style="--shiki-light:#1976D2;--shiki-dark:#F78C6C"> 0</span><span style="--shiki-light:#D32F2F;--shiki-light-font-style:inherit;--shiki-dark:#C792EA;--shiki-dark-font-style:italic">,</span></span>
+<span class="line"><span style="--shiki-light:#24292EFF;--shiki-dark:#C5E478">  start_char</span><span style="--shiki-light:#D32F2F;--shiki-light-font-style:inherit;--shiki-dark:#C792EA;--shiki-dark-font-style:italic">:</span><span style="--shiki-light:#1976D2;--shiki-dark:#F78C6C"> 0</span><span style="--shiki-light:#D32F2F;--shiki-light-font-style:inherit;--shiki-dark:#C792EA;--shiki-dark-font-style:italic">,</span></span>
+<span class="line"><span style="--shiki-light:#24292EFF;--shiki-dark:#C5E478">  end_char</span><span style="--shiki-light:#D32F2F;--shiki-light-font-style:inherit;--shiki-dark:#C792EA;--shiki-dark-font-style:italic">:</span><span style="--shiki-light:#1976D2;--shiki-dark:#F78C6C"> 500</span><span style="--shiki-light:#D32F2F;--shiki-light-font-style:inherit;--shiki-dark:#C792EA;--shiki-dark-font-style:italic">,</span></span>
+<span class="line"><span style="--shiki-light:#24292EFF;--shiki-dark:#C5E478">  embedding</span><span style="--shiki-light:#D32F2F;--shiki-light-font-style:inherit;--shiki-dark:#C792EA;--shiki-dark-font-style:italic">:</span><span style="--shiki-light:#24292EFF;--shiki-dark:#D6DEEB"> [</span><span style="--shiki-light:#1976D2;--shiki-dark:#F78C6C">0.023</span><span style="--shiki-light:#D32F2F;--shiki-light-font-style:inherit;--shiki-dark:#C792EA;--shiki-dark-font-style:italic">,</span><span style="--shiki-light:#D32F2F;--shiki-dark:#7FDBCA"> -</span><span style="--shiki-light:#1976D2;--shiki-dark:#F78C6C">0.156</span><span style="--shiki-light:#D32F2F;--shiki-light-font-style:inherit;--shiki-dark:#C792EA;--shiki-dark-font-style:italic">,</span><span style="--shiki-light:#24292EFF;--shiki-dark:#D6DEEB"> ...]</span><span style="--shiki-light:#D32F2F;--shiki-light-font-style:inherit;--shiki-dark:#C792EA;--shiki-dark-font-style:italic">,</span><span style="--shiki-light:#C2C3C5;--shiki-light-font-style:inherit;--shiki-dark:#637777;--shiki-dark-font-style:italic">  // 768 dimensions</span></span>
+<span class="line"><span style="--shiki-light:#24292EFF;--shiki-dark:#C5E478">  char_count</span><span style="--shiki-light:#D32F2F;--shiki-light-font-style:inherit;--shiki-dark:#C792EA;--shiki-dark-font-style:italic">:</span><span style="--shiki-light:#1976D2;--shiki-dark:#F78C6C"> 485</span><span style="--shiki-light:#D32F2F;--shiki-light-font-style:inherit;--shiki-dark:#C792EA;--shiki-dark-font-style:italic">,</span></span>
+<span class="line"><span style="--shiki-light:#24292EFF;--shiki-dark:#C5E478">  word_count</span><span style="--shiki-light:#D32F2F;--shiki-light-font-style:inherit;--shiki-dark:#C792EA;--shiki-dark-font-style:italic">:</span><span style="--shiki-light:#1976D2;--shiki-dark:#F78C6C"> 72</span></span>
+<span class="line"><span style="--shiki-light:#D32F2F;--shiki-light-font-style:inherit;--shiki-dark:#C792EA;--shiki-dark-font-style:italic">}</span><span style="--shiki-light:#24292EFF;--shiki-dark:#D6DEEB">)</span></span>
+<span class="line"></span>
+<span class="line"><span style="--shiki-light:#C2C3C5;--shiki-light-font-style:inherit;--shiki-dark:#637777;--shiki-dark-font-style:italic">// Relation</span></span>
+<span class="line"><span style="--shiki-light:#D32F2F;--shiki-dark:#C792EA">CREATE</span><span style="--shiki-light:#24292EFF;--shiki-dark:#D6DEEB"> (</span><span style="--shiki-light:#24292EFF;--shiki-dark:#C5E478">d</span><span style="--shiki-light:#24292EFF;--shiki-dark:#D6DEEB">)</span><span style="--shiki-light:#6F42C1;--shiki-dark:#C5E478">-</span><span style="--shiki-light:#D32F2F;--shiki-dark:#7FDBCA">[:</span><span style="--shiki-light:#24292EFF;--shiki-dark:#FFCB8B">CONTAINS</span><span style="--shiki-light:#D32F2F;--shiki-light-font-style:inherit;--shiki-dark:#C792EA;--shiki-dark-font-style:italic"> {</span></span>
+<span class="line"><span style="--shiki-light:#24292EFF;--shiki-dark:#C5E478">  order</span><span style="--shiki-light:#D32F2F;--shiki-light-font-style:inherit;--shiki-dark:#C792EA;--shiki-dark-font-style:italic">:</span><span style="--shiki-light:#1976D2;--shiki-dark:#F78C6C"> 0</span><span style="--shiki-light:#D32F2F;--shiki-light-font-style:inherit;--shiki-dark:#C792EA;--shiki-dark-font-style:italic">,</span></span>
+<span class="line"><span style="--shiki-light:#24292EFF;--shiki-dark:#C5E478">  confidence</span><span style="--shiki-light:#D32F2F;--shiki-light-font-style:inherit;--shiki-dark:#C792EA;--shiki-dark-font-style:italic">:</span><span style="--shiki-light:#1976D2;--shiki-dark:#F78C6C"> 1.0</span></span>
+<span class="line"><span style="--shiki-light:#D32F2F;--shiki-light-font-style:inherit;--shiki-dark:#C792EA;--shiki-dark-font-style:italic">}</span><span style="--shiki-light:#D32F2F;--shiki-dark:#7FDBCA">]</span><span style="--shiki-light:#6F42C1;--shiki-dark:#C5E478">-></span><span style="--shiki-light:#24292EFF;--shiki-dark:#D6DEEB">(</span><span style="--shiki-light:#24292EFF;--shiki-dark:#C5E478">c</span><span style="--shiki-light:#24292EFF;--shiki-dark:#D6DEEB">)</span></span></code></pre>
+<h4 id="index-et-contraintes">Index et Contraintes</h4>
+<pre class="astro-code astro-code-themes min-light night-owl" style="--shiki-light:#24292eff;--shiki-dark:#d6deeb;--shiki-light-bg:#ffffff;--shiki-dark-bg:#011627; overflow-x: auto;--file-name-offset: -0.75rem;" tabindex="0" data-language="cypher"><code><span class="line"><span style="--shiki-light:#C2C3C5;--shiki-light-font-style:inherit;--shiki-dark:#637777;--shiki-dark-font-style:italic">// Performance: index sur recherches fréquentes</span></span>
+<span class="line"><span style="--shiki-light:#D32F2F;--shiki-dark:#C792EA">CREATE</span><span style="--shiki-light:#24292EFF;--shiki-dark:#C5E478"> INDEX</span><span style="--shiki-light:#24292EFF;--shiki-dark:#C5E478"> chunk_id</span><span style="--shiki-light:#24292EFF;--shiki-dark:#C5E478"> IF</span><span style="--shiki-light:#24292EFF;--shiki-dark:#C5E478"> NOT</span><span style="--shiki-light:#24292EFF;--shiki-dark:#C5E478"> EXISTS</span></span>
+<span class="line"><span style="--shiki-light:#24292EFF;--shiki-dark:#C5E478">FOR</span><span style="--shiki-light:#24292EFF;--shiki-dark:#D6DEEB"> (</span><span style="--shiki-light:#24292EFF;--shiki-dark:#C5E478">c</span><span style="--shiki-light:#24292EFF;--shiki-dark:#D6DEEB">:</span><span style="--shiki-light:#24292EFF;--shiki-dark:#C5E478">Chunk</span><span style="--shiki-light:#24292EFF;--shiki-dark:#D6DEEB">) </span><span style="--shiki-light:#24292EFF;--shiki-dark:#C5E478">ON</span><span style="--shiki-light:#24292EFF;--shiki-dark:#D6DEEB"> (</span><span style="--shiki-light:#24292EFF;--shiki-dark:#C5E478">c</span><span style="--shiki-light:#24292EFF;--shiki-dark:#D6DEEB">.</span><span style="--shiki-light:#24292EFF;--shiki-dark:#C5E478">id</span><span style="--shiki-light:#24292EFF;--shiki-dark:#D6DEEB">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="--shiki-light:#D32F2F;--shiki-dark:#C792EA">CREATE</span><span style="--shiki-light:#24292EFF;--shiki-dark:#C5E478"> INDEX</span><span style="--shiki-light:#24292EFF;--shiki-dark:#C5E478"> doc_id</span><span style="--shiki-light:#24292EFF;--shiki-dark:#C5E478"> IF</span><span style="--shiki-light:#24292EFF;--shiki-dark:#C5E478"> NOT</span><span style="--shiki-light:#24292EFF;--shiki-dark:#C5E478"> EXISTS</span></span>
+<span class="line"><span style="--shiki-light:#24292EFF;--shiki-dark:#C5E478">FOR</span><span style="--shiki-light:#24292EFF;--shiki-dark:#D6DEEB"> (</span><span style="--shiki-light:#24292EFF;--shiki-dark:#C5E478">d</span><span style="--shiki-light:#24292EFF;--shiki-dark:#D6DEEB">:</span><span style="--shiki-light:#24292EFF;--shiki-dark:#C5E478">Document</span><span style="--shiki-light:#24292EFF;--shiki-dark:#D6DEEB">) </span><span style="--shiki-light:#24292EFF;--shiki-dark:#C5E478">ON</span><span style="--shiki-light:#24292EFF;--shiki-dark:#D6DEEB"> (</span><span style="--shiki-light:#24292EFF;--shiki-dark:#C5E478">d</span><span style="--shiki-light:#24292EFF;--shiki-dark:#D6DEEB">.</span><span style="--shiki-light:#24292EFF;--shiki-dark:#C5E478">id</span><span style="--shiki-light:#24292EFF;--shiki-dark:#D6DEEB">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="--shiki-light:#D32F2F;--shiki-dark:#C792EA">CREATE</span><span style="--shiki-light:#24292EFF;--shiki-dark:#C5E478"> INDEX</span><span style="--shiki-light:#24292EFF;--shiki-dark:#C5E478"> doc_filename</span><span style="--shiki-light:#24292EFF;--shiki-dark:#C5E478"> IF</span><span style="--shiki-light:#24292EFF;--shiki-dark:#C5E478"> NOT</span><span style="--shiki-light:#24292EFF;--shiki-dark:#C5E478"> EXISTS</span></span>
+<span class="line"><span style="--shiki-light:#24292EFF;--shiki-dark:#C5E478">FOR</span><span style="--shiki-light:#24292EFF;--shiki-dark:#D6DEEB"> (</span><span style="--shiki-light:#24292EFF;--shiki-dark:#C5E478">d</span><span style="--shiki-light:#24292EFF;--shiki-dark:#D6DEEB">:</span><span style="--shiki-light:#24292EFF;--shiki-dark:#C5E478">Document</span><span style="--shiki-light:#24292EFF;--shiki-dark:#D6DEEB">) </span><span style="--shiki-light:#24292EFF;--shiki-dark:#C5E478">ON</span><span style="--shiki-light:#24292EFF;--shiki-dark:#D6DEEB"> (</span><span style="--shiki-light:#24292EFF;--shiki-dark:#C5E478">d</span><span style="--shiki-light:#24292EFF;--shiki-dark:#D6DEEB">.</span><span style="--shiki-light:#24292EFF;--shiki-dark:#C5E478">filename</span><span style="--shiki-light:#24292EFF;--shiki-dark:#D6DEEB">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="--shiki-light:#C2C3C5;--shiki-light-font-style:inherit;--shiki-dark:#637777;--shiki-dark-font-style:italic">// Full-text search backup</span></span>
+<span class="line"><span style="--shiki-light:#D32F2F;--shiki-dark:#C792EA">CREATE</span><span style="--shiki-light:#24292EFF;--shiki-dark:#C5E478"> FULLTEXT</span><span style="--shiki-light:#24292EFF;--shiki-dark:#C5E478"> INDEX</span><span style="--shiki-light:#24292EFF;--shiki-dark:#C5E478"> chunk_text</span><span style="--shiki-light:#24292EFF;--shiki-dark:#C5E478"> IF</span><span style="--shiki-light:#24292EFF;--shiki-dark:#C5E478"> NOT</span><span style="--shiki-light:#24292EFF;--shiki-dark:#C5E478"> EXISTS</span></span>
+<span class="line"><span style="--shiki-light:#24292EFF;--shiki-dark:#C5E478">FOR</span><span style="--shiki-light:#24292EFF;--shiki-dark:#D6DEEB"> (</span><span style="--shiki-light:#24292EFF;--shiki-dark:#C5E478">c</span><span style="--shiki-light:#24292EFF;--shiki-dark:#D6DEEB">:</span><span style="--shiki-light:#24292EFF;--shiki-dark:#C5E478">Chunk</span><span style="--shiki-light:#24292EFF;--shiki-dark:#D6DEEB">) </span><span style="--shiki-light:#24292EFF;--shiki-dark:#C5E478">ON</span><span style="--shiki-light:#24292EFF;--shiki-dark:#C5E478"> EACH</span><span style="--shiki-light:#24292EFF;--shiki-dark:#D6DEEB"> [</span><span style="--shiki-light:#24292EFF;--shiki-dark:#C5E478">c</span><span style="--shiki-light:#24292EFF;--shiki-dark:#D6DEEB">.</span><span style="--shiki-light:#24292EFF;--shiki-dark:#C5E478">text</span><span style="--shiki-light:#24292EFF;--shiki-dark:#D6DEEB">];</span></span>
+<span class="line"></span>
+<span class="line"><span style="--shiki-light:#C2C3C5;--shiki-light-font-style:inherit;--shiki-dark:#637777;--shiki-dark-font-style:italic">// Contraintes unicité</span></span>
+<span class="line"><span style="--shiki-light:#D32F2F;--shiki-dark:#C792EA">CREATE</span><span style="--shiki-light:#24292EFF;--shiki-dark:#C5E478"> CONSTRAINT</span><span style="--shiki-light:#24292EFF;--shiki-dark:#C5E478"> doc_id_unique</span><span style="--shiki-light:#24292EFF;--shiki-dark:#C5E478"> IF</span><span style="--shiki-light:#24292EFF;--shiki-dark:#C5E478"> NOT</span><span style="--shiki-light:#24292EFF;--shiki-dark:#C5E478"> EXISTS</span></span>
+<span class="line"><span style="--shiki-light:#24292EFF;--shiki-dark:#C5E478">FOR</span><span style="--shiki-light:#24292EFF;--shiki-dark:#D6DEEB"> (</span><span style="--shiki-light:#24292EFF;--shiki-dark:#C5E478">d</span><span style="--shiki-light:#24292EFF;--shiki-dark:#D6DEEB">:</span><span style="--shiki-light:#24292EFF;--shiki-dark:#C5E478">Document</span><span style="--shiki-light:#24292EFF;--shiki-dark:#D6DEEB">) </span><span style="--shiki-light:#24292EFF;--shiki-dark:#C5E478">REQUIRE</span><span style="--shiki-light:#24292EFF;--shiki-dark:#C5E478"> d</span><span style="--shiki-light:#24292EFF;--shiki-dark:#D6DEEB">.</span><span style="--shiki-light:#24292EFF;--shiki-dark:#C5E478">id</span><span style="--shiki-light:#D32F2F;--shiki-dark:#C792EA"> IS</span><span style="--shiki-light:#24292EFF;--shiki-dark:#C5E478"> UNIQUE</span><span style="--shiki-light:#24292EFF;--shiki-dark:#D6DEEB">;</span></span>
+<span class="line"></span></code></pre>
+<p><img alt="alt text" loading="lazy" decoding="async" fetchpriority="auto" sizes="(min-width: 1135px) 1135px, 100vw"  data-astro-image="constrained" width="1135" height="618" src="/_astro/image.Dy1vqkZ2_Z6CRnD.webp" srcset="/_astro/image.Dy1vqkZ2_Z18iaiu.webp 640w, /_astro/image.Dy1vqkZ2_1zvUsR.webp 750w, /_astro/image.Dy1vqkZ2_2n953y.webp 828w, /_astro/image.Dy1vqkZ2_Z1mTuuY.webp 1080w, /_astro/image.Dy1vqkZ2_Z6CRnD.webp 1135w"></p>
+<h2 id="5-amélioration">5. Amélioration :</h2>
+<p>Un RAG n’est utile que s’il est <strong>fiable dans la durée</strong>.La précision initiale ne suffit pas : le système doit <strong>s’auto-évaluer, s’adapter et gagner la confiance</strong> de ses utilisateurs au fil du temps. Pour y parvenir, nous devons mettre en place des :</p>
+<h4 id="métriques-clés-à-surveiller-en-continu"><strong>Métriques clés à surveiller en continu</strong></h4>
+<ul>
+<li><strong>Latence par étape</strong> :
+<ul>
+<li>Ingestion (temps de traitement par document)</li>
+<li>Retrieval (recherche vectorielle &#x3C; 100 ms cible)</li>
+<li>Génération (temps de réponse LLM)</li>
+</ul>
+</li>
+<li><strong>Qualité du retrieval</strong> :
+<ul>
+<li>Précision et rappel évalués via <strong>LLM-as-a-judge</strong> (ex: « Ce chunk répond-il à la question ? »)</li>
+<li>Comparaison avec un jeu de test métier validé par des experts</li>
+</ul>
+</li>
+<li><strong>Taux d’hallucination</strong> :
+<ul>
+<li>Vérification automatique que chaque affirmation dans la réponse est <strong>directement soutenue</strong> par au moins un extrait source</li>
+<li>Détection via NLI (Natural Language Inference) ou règles de couverture lexicale/sémantique</li>
+</ul>
+</li>
+</ul>
+<h4 id="observabilité-opérationnelle"><strong>Observabilité opérationnelle</strong></h4>
+<ul>
+<li><strong>Logs structurés</strong> (format JSON) incluant :
+<ul>
+<li>Identifiant de requête unique</li>
+<li>Liste des chunks récupérés (ID, score cosine, métadonnées)</li>
+<li>Prompt envoyé au LLM et réponse brute</li>
+</ul>
+</li>
+<li><strong>Dashboard centralisé</strong> (Grafana + Prometheus) :
+<ul>
+<li>Taux d’erreur, volume de requêtes, distribution des latences</li>
+<li>Évolution du taux de succès du retrieval sur 7/30 jours</li>
+<li>Alertes en cas de dégradation soudaine</li>
+</ul>
+</li>
+</ul>
+<h4 id="backend-et-sécurité"><strong>Backend et sécurité</strong></h4>
+<ul>
+<li><strong>Sécurité des données</strong> :
+<ul>
+<li>Isolation des documents par <strong>tenant</strong> (multi-tenant léger via préfixe dans les IDs)</li>
+<li>Chiffrement des uploads</li>
+</ul>
+</li>
+</ul>
+<h2 id="6--démo">6. 🎥 Démo :</h2> </article> <hr class="my-8 border-dashed"> <a href="https://github.com/fkdia23" target="_blank" rel="noopener noreferrer" class="flex justify-baseline gap-1.5 opacity-80 hover:text-accent sm:hidden"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="inline-block"><path stroke="none" d="M0 0h24v24H0z" fill="none" /><path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5" /></svg><span>code source</span></a> <ul class="mt-4 mb-8 sm:my-8"> <li class="group inline-block group-hover:cursor-pointer my-1 underline-offset-4"> <a href="/tags/rag/" class="relative pe-2 text-lg underline decoration-dashed group-hover:-top-0.5 group-hover:text-accent focus-visible:p-1 focus-visible:no-underline text-sm" data-astro-transition-scope="astro-36ssibgs-2"> <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="inline-block opacity-80 -me-3.5 size-4"><path stroke="none" d="M0 0h24v24H0z" fill="none" /><path d="M5 9l14 0" /><path d="M5 15l14 0" /><path d="M11 4l-4 16" /><path d="M17 4l-4 16" /></svg>
+&nbsp;<span>RAG</span> </a> </li><li class="group inline-block group-hover:cursor-pointer my-1 underline-offset-4"> <a href="/tags/ursaff-caisse-nationale/" class="relative pe-2 text-lg underline decoration-dashed group-hover:-top-0.5 group-hover:text-accent focus-visible:p-1 focus-visible:no-underline text-sm" data-astro-transition-scope="astro-36ssibgs-3"> <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="inline-block opacity-80 -me-3.5 size-4"><path stroke="none" d="M0 0h24v24H0z" fill="none" /><path d="M5 9l14 0" /><path d="M5 15l14 0" /><path d="M11 4l-4 16" /><path d="M17 4l-4 16" /></svg>
+&nbsp;<span>Ursaff Caisse Nationale</span> </a> </li> </ul> <div id="btt-btn-container" class="fixed end-4 bottom-8 z-50 md:sticky md:end-auto md:float-end md:me-1 translate-y-14 opacity-0 transition duration-500"> <button data-button="back-to-top" class="group relative bg-background px-2 py-1 size-14 rounded-full shadow-xl md:h-8 md:w-fit md:rounded-md md:shadow-none md:focus-visible:rounded-none md:bg-background/35 md:bg-clip-padding md:backdrop-blur-lg"> <span id="progress-indicator" class="absolute inset-0 -z-10 block size-14 scale-110 rounded-full bg-transparent md:hidden md:h-8 md:rounded-md"></span> <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="inline-block rotate-90 md:hidden"><path stroke="none" d="M0 0h24v24H0z" fill="none" /><path d="M15 6l-6 6l6 6" /></svg> <span class="sr-only text-sm group-hover:text-accent md:not-sr-only"> <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="inline-block size-4"><path stroke="none" d="M0 0h24v24H0z" fill="none" /><path d="M12 5l0 14" /><path d="M16 9l-4 -4" /><path d="M8 9l4 -4" /></svg>
+Back To Top
+</span> </button> </div> <script data-astro-rerun>
+  /** Scrolls the document to the top when
+   * the "Back to Top" button is clicked. */
+  function backToTop() {
+    const rootElement = document.documentElement;
+    const btnContainer = document.querySelector("#btt-btn-container");
+    const backToTopBtn = document.querySelector("[data-button='back-to-top']");
+    const progressIndicator = document.querySelector("#progress-indicator");
+
+    if (!rootElement || !btnContainer || !backToTopBtn || !progressIndicator)
+      return;
+
+    // Attach click event handler for back-to-top button
+    backToTopBtn.addEventListener("click", () => {
+      document.body.scrollTop = 0; // For Safari
+      document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+    });
+
+    // Handle button visibility according to scroll position
+    let lastVisible = null;
+    function handleScroll() {
+      const scrollTotal = rootElement.scrollHeight - rootElement.clientHeight;
+      const scrollTop = rootElement.scrollTop;
+      const scrollPercent = Math.floor((scrollTop / scrollTotal) * 100);
+
+      progressIndicator.style.setProperty(
+        "background-image",
+        `conic-gradient(var(--accent), var(--accent) ${scrollPercent}%, transparent ${scrollPercent}%)`
+      );
+
+      const isVisible = scrollTop / scrollTotal > 0.3;
+
+      if (isVisible !== lastVisible) {
+        btnContainer.classList.toggle("opacity-100", isVisible);
+        btnContainer.classList.toggle("translate-y-0", isVisible);
+        btnContainer.classList.toggle("opacity-0", !isVisible);
+        btnContainer.classList.toggle("translate-y-14", !isVisible);
+        lastVisible = isVisible;
+      }
+    }
+
+    let ticking = false;
+    document.addEventListener("scroll", () => {
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          handleScroll();
+          ticking = false;
+        });
+        ticking = true;
+      }
+    });
+  }
+  backToTop();
+</script> <!-- <ShareLinks /> --> <!-- 
+    <hr class="my-6 border-dashed" /> --> <!-- Previous/Next Post Buttons --> <div data-pagefind-ignore class="grid grid-cols-1 gap-6 sm:grid-cols-2">   </div> </main> <footer class="w-full mt-auto"> <div class="mx-auto max-w-app px-0"> <hr class="border-border" aria-hidden="true"> </div> <div class="flex flex-col items-center justify-between py-6 sm:flex-row-reverse sm:py-4"> <div class="flex-wrap justify-center gap-1 flex"> <a href="https://github.com/fkdia23" class="group inline-block hover:text-accent p-2 hover:rotate-6 sm:p-1" title="Home on GitHub"> <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="inline-block size-6 scale-125 fill-transparent stroke-current stroke-2 opacity-90 group-hover:fill-transparent sm:scale-110"><path stroke="none" d="M0 0h24v24H0z" fill="none" /><path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5" /></svg> <span class="sr-only">Home on GitHub</span> </a><a href="https://www.linkedin.com/in/franklin-kana-nguedia" class="group inline-block hover:text-accent p-2 hover:rotate-6 sm:p-1" title="Home on LinkedIn"> <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="inline-block size-6 scale-125 fill-transparent stroke-current stroke-2 opacity-90 group-hover:fill-transparent sm:scale-110"><path stroke="none" d="M0 0h24v24H0z" fill="none" /><path d="M8 11v5" /><path d="M8 8v.01" /><path d="M12 16v-5" /><path d="M16 16v-3a2 2 0 1 0 -4 0" /><path d="M3 7a4 4 0 0 1 4 -4h10a4 4 0 0 1 4 4v10a4 4 0 0 1 -4 4h-10a4 4 0 0 1 -4 -4z" /></svg> <span class="sr-only">Home on LinkedIn</span> </a><a href="mailto:fknguedia@gmail.com" class="group inline-block hover:text-accent p-2 hover:rotate-6 sm:p-1" title="Send an email to Home"> <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="inline-block size-6 scale-125 fill-transparent stroke-current stroke-2 opacity-90 group-hover:fill-transparent sm:scale-110"><path stroke="none" d="M0 0h24v24H0z" fill="none" /><path d="M3 7a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v10a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-10z" /><path d="M3 7l9 6l9 -6" /></svg> <span class="sr-only">Send an email to Home</span> </a> </div> <div class="my-2 flex flex-col items-center whitespace-nowrap sm:flex-row"> <span>Copyright &#169; 2026</span> <span class="hidden sm:inline">&nbsp;|&nbsp;</span> <span>All rights reserved.</span> </div> </div> </footer>  </body></html> <script data-astro-rerun>
+  /** Create a progress indicator
+   *  at the top */
+  function createProgressBar() {
+    // Create the main container div
+    const progressContainer = document.createElement("div");
+    progressContainer.className =
+      "progress-container fixed top-0 z-10 h-1 w-full bg-background";
+
+    // Create the progress bar div
+    const progressBar = document.createElement("div");
+    progressBar.className = "progress-bar h-1 w-0 bg-accent";
+    progressBar.id = "myBar";
+
+    // Append the progress bar to the progress container
+    progressContainer.appendChild(progressBar);
+
+    // Append the progress container to the document body or any other desired parent element
+    document.body.appendChild(progressContainer);
+  }
+  createProgressBar();
+
+  /** Update the progress bar
+   *  when user scrolls */
+  function updateScrollProgress() {
+    document.addEventListener("scroll", () => {
+      const winScroll =
+        document.body.scrollTop || document.documentElement.scrollTop;
+      const height =
+        document.documentElement.scrollHeight -
+        document.documentElement.clientHeight;
+      const scrolled = (winScroll / height) * 100;
+      if (document) {
+        const myBar = document.getElementById("myBar");
+        if (myBar) {
+          myBar.style.width = scrolled + "%";
+        }
+      }
+    });
+  }
+  updateScrollProgress();
+
+  /** Attaches links to headings in the document,
+   *  allowing sharing of sections easily */
+  function addHeadingLinks() {
+    const headings = Array.from(
+      document.querySelectorAll("h2, h3, h4, h5, h6")
+    );
+    for (const heading of headings) {
+      heading.classList.add("group");
+      const link = document.createElement("a");
+      link.className =
+        "heading-link ms-2 no-underline opacity-75 md:opacity-0 md:group-hover:opacity-100 md:focus:opacity-100";
+      link.href = "#" + heading.id;
+
+      const span = document.createElement("span");
+      span.ariaHidden = "true";
+      span.innerText = "#";
+      link.appendChild(span);
+      heading.appendChild(link);
+    }
+  }
+  addHeadingLinks();
+
+  /** Attaches copy buttons to code blocks in the document,
+   * allowing users to copy code easily. */
+  function attachCopyButtons() {
+    const copyButtonLabel = "Copy";
+    const codeBlocks = Array.from(document.querySelectorAll("pre"));
+
+    for (const codeBlock of codeBlocks) {
+      const wrapper = document.createElement("div");
+      wrapper.style.position = "relative";
+
+      // Check if --file-name-offset custom property exists
+      const computedStyle = getComputedStyle(codeBlock);
+      const hasFileNameOffset =
+        computedStyle.getPropertyValue("--file-name-offset").trim() !== "";
+
+      // Determine the top positioning class
+      const topClass = hasFileNameOffset
+        ? "top-(--file-name-offset)"
+        : "-top-3";
+
+      const copyButton = document.createElement("button");
+      copyButton.className = `copy-code absolute end-3 ${topClass} rounded bg-muted border border-muted px-2 py-1 text-xs leading-4 text-foreground font-medium`;
+      copyButton.innerHTML = copyButtonLabel;
+      codeBlock.setAttribute("tabindex", "0");
+      codeBlock.appendChild(copyButton);
+
+      // wrap codebock with relative parent element
+      codeBlock?.parentNode?.insertBefore(wrapper, codeBlock);
+      wrapper.appendChild(codeBlock);
+
+      copyButton.addEventListener("click", async () => {
+        await copyCode(codeBlock, copyButton);
+      });
+    }
+
+    async function copyCode(block, button) {
+      const code = block.querySelector("code");
+      const text = code?.innerText;
+
+      await navigator.clipboard.writeText(text ?? "");
+
+      // visual feedback that task is completed
+      button.innerText = "Copied";
+
+      setTimeout(() => {
+        button.innerText = copyButtonLabel;
+      }, 700);
+    }
+  }
+  attachCopyButtons();
+
+  /* Go to page start after page swap */
+  document.addEventListener("astro:after-swap", () =>
+    window.scrollTo({ left: 0, top: 0, behavior: "instant" })
+  );
+</script>
